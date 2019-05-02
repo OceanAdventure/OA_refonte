@@ -8,13 +8,18 @@ use Symfony\Component\Routing\Annotation\Route;
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/accueil", name="accueil")
+     * @Route("/", name="accueil")
      */
-    public function index()
+    public function pageAccueil()
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/AccueilController.php',
-        ]);
+        return $this->render('Pages/accueil.html.twig');
+    }
+
+    /**
+     * @Route("/fuerteventura", name="fuert", methods="GET")
+     */
+    public function fuerteventura()
+    {
+        return $this->render('Pages/fuert.html.twig');
     }
 }
