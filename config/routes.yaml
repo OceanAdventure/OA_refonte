@@ -1,3 +1,13 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+accueil:
+    path: /{_locale}
+    controller: App\Controller\AccueilController::pageAccueil
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr
+
+fuert:
+    path: /{_locale}/fuerteventura
+    controller: App\Controller\AccueilController::fuerteventura
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

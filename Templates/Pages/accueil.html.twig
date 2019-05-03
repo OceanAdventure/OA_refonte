@@ -4,7 +4,15 @@
 
 {% block body %}
     <main role="main" class="container">
-    <div class="col-md-8 col-lg-8 col-xs-12">
-    <img src="home_surfing_slider.jpg" width="1450" alt="" height="740" border="0"/>
+    <div class="container-fluid">
+	    <div class="row">
+		    <div class="col-md-10">
+                <img src="{{ asset('images/home_surfing_slider.jpg') }}" alt="" width="1250" height="740" style="float:left;"/>
+		    </div>
+            <div class="col-md-2">
+            </div>
+	    </div>
     </div>
+    
+    </main>
 {% endblock %}
