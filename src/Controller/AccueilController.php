@@ -30,4 +30,12 @@ class AccueilController extends AbstractController
     {
         return $this->render('Pages/contact/concept.html.twig');
     }
+
+    /**
+     * @Route("/contact-info", name="contact_info", methods="GET")
+     */
+    public function contact_info()
+    {
+        return $this->render('Pages/contact/contact.html.twig');
+    }
 }
