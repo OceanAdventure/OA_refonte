@@ -22,4 +22,12 @@ class AccueilController extends AbstractController
     {
         return $this->render('Pages/fuert.html.twig');
     }
+
+    /**
+     * @Route("/concept-contact", name="concept", methods="GET")
+     */
+    public function concept_contact()
+    {
+        return $this->render('Pages/contact/concept.html.twig');
+    }
 }
