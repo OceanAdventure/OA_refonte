@@ -11,3 +11,10 @@ fuert:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+concept:
+    path: /{_locale}/concept-contact
+    controller: App\Controller\AccueilController::concept_contact
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

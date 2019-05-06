@@ -1,0 +1,50 @@
+{% extends 'Base.html.twig' %}
+
+{% block title %}CONTACT INFO{% endblock %}
+
+{% block body %}
+	<div class="row">
+		<div class="col-md-12">
+        <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="auto" style="margin: 0px; padding: 0px;"/>
+		</div>
+	</div><br><br>
+
+    <div style="margin-left:10%;" class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <h2><b>
+			        Ocean Adventure
+		        </b></h2><br>
+                <p>
+                    +33 (0)6 19 03 69 06<br>
+                    travelling[@]oceanadventure.surf
+                </p>
+                <h2><b>
+			        Posez votre question
+		        </b></h2><br>
+                <div id="contactForm" class="mt-4">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col">{{ form_row(form.prenom) }}</div>
+                        <div class="col">{{ form_row(form.nom) }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col">{{ form_row(form.telephone) }}</div>
+                        <div class="col">{{ form_row(form.mail) }}</div>
+                    </div>
+                    {{ form_rest(form) }}
+                    <div class="form-group"><button class"btn-primary">Envoyer</button></div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h2><b>
+			        Notre Adresse
+		        </b></h2><br>
+                <p style="margin-right:10%;">
+                    Technopole Izarbel, 231 allée Fauste d'Elhuyar, 64210 Bidart
+                </p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.1325941303785!2d-1.5689581845976441!3d43.47870317912773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd516b2d71d3c5b5%3A0x540658bb6790a2fa!2sCours+De+Surf+Biarritz%2C+C%C3%B4te+des+Basques+-+Ocean+Adventure!5e0!3m2!1sfr!2sfr!4v1557147433030!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="margin-right:85px;" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}
