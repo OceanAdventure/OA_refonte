@@ -8,6 +8,8 @@ use Symfony\Component\Form\AbstractType;
 
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 use Symfony\Component\Form\FormBuilderInterface;
@@ -23,7 +25,7 @@ class ContactType extends AbstractType
             ->add('prenom', TextType::class)
             ->add('nom', TextType::class)
             ->add('telephone', TextType::class)
-            ->add('mail', TextType::class)
+            ->add('mail', EmailType::class)
             ->add('sujet', TextType::class)
             ->add('message', TextareaType::class)
         ;
