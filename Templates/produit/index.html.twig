@@ -1,0 +1,53 @@
+{% extends 'Structure/base.html.twig' %}
+
+{% block title %}Liste des cours{% endblock %}
+
+{% block body %}
+    <h1>Produit index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Titre_principal</th>
+                <th>Titre_secondaire</th>
+                <th>Condition_reglement</th>
+                <th>Prix</th>
+                <th>Nb_cours</th>
+                <th>Descrition</th>
+                <th>Destination</th>
+                <th>Sport</th>
+                <th>Particulier</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.Image }}</td>
+                <td>{{ produit.titrePrincipal }}</td>
+                <td>{{ produit.titreSecondaire }}</td>
+                <td>{{ produit.conditionReglement }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.nbCours }}</td>
+                <td>{{ produit.descrition }}</td>
+                <td>{{ produit.destination }}</td>
+                <td>{{ produit.sport }}</td>
+                <td>{{ produit.particulier ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
+                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('produit_new') }}">Create new</a>
+{% endblock %}

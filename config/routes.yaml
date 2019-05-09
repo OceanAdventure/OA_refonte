@@ -39,3 +39,10 @@ admin:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+produit_show:
+    path: /{_locale}/produit/{id}
+    controller: App\Controller\ProduitController::show
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

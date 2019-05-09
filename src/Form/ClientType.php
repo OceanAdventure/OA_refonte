@@ -34,7 +34,7 @@ class ClientType extends AbstractType
                     'Collective' => 'collective',
                     'Privée' => 'privee',
                 ]])
-            ->add('type_activite', ChoiceType::class, ['label' => false], [
+            ->add('type_activite', ChoiceType::class,['label' => false], [
                 'choices'  => [
                     'Kite' => 'kite',
                     'Surf' => 'surf',
