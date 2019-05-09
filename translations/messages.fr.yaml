@@ -20,6 +20,7 @@ body:
   text5: L'île de Fuerteventura n'est que sable et mer à l'état pur. Au bout des dunes, vous trouverez des eaux couleur turquoise et du sable d'un blanc parfait. Ses plages paradisiaques et sa nature exubérante vous laisseront bouche bée.
   text6: L'île est un refuge authentique de sérénité pour oublier le stress de votre quotidien. Ses eaux cristallines vous permettront de vous ressourcer et vous vous sentirez renouvelé. Profitez de ces 10 km de plages juste pour vous. Que l'on soit adepte de bains de soleil sur la plage ou plutôt avide de sports, sur Fuerteventura chacun trouvera de quoi occuper ses journées selon ses goûts. L'île comporte de beaux villages et vous offre la proximité du centre urbain où vous pourrez découvrir la culture tropicale, latino américaine des canariens et la mouvance jeune et très européenne de cette ville..
 
+
   text1concept: Notre concept est simple et hérité d'une vie de passion à sillonner le monde pour 
                découvrir des vagues et des hommes. Les surf camps sont un concept à la mode et les 
                écoles pullulent, à Corralejo, Fuerteventura, il y en a plus de 55... de plus ou moins 
@@ -40,3 +41,23 @@ body:
   sousText3concept: Guide de surf Nazaré, Portugal
   sousText4concept: Guide de surf de Cojalero, Fuerteventura, île Canaries
   sousText5concept: Guide de surf Simeulue, Sumatra, Indonésie
+
+
+  title1res: Réservation Voyage de Surf Ocean Adventure
+  title2res: Posez votre question
+  title3res: Notre Adresse
+
+
+user:
+  prenom: Prenom
+  nom: Nom
+  telephone: Téléphone 
+  mail: Mail
+  sujet: Sujet
+  message: Message
+  envoye: Envoyer
+  nuite: Nuitée
+  date_arr: Date d'arrivée
+  nb_pers: Nombre de personnes
+  type_act: Type d'activité
+  type_ch: Type de chambre

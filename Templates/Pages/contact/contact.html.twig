@@ -20,7 +20,7 @@
                     travelling[@]oceanadventure.surf
                 </p>
                 <h2><b>
-			        Posez votre question
+			        {{ 'body.title2res'|trans }}
 		        </b></h2><br>
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success">
@@ -30,17 +30,21 @@
                 <div id="contactForm" class="mt-4">
                     {{ form_start(form) }}
                     <div class="row">
-                        <div class="col">{{ form_row(form.prenom) }}</div>
-                        <div class="col">{{ form_row(form.nom) }}</div>
+                        <div class="col">{{ form_label(form.prenom, 'user.prenom'|trans) }} {{ form_row(form.prenom) }}</div>
+                        <div class="col">{{ form_label(form.nom, 'user.nom'|trans) }} {{ form_row(form.nom) }}</div>
                     </div>
-                    {{ form_rest(form) }}
-                    <button type="submit" class"btn btn-primary">Envoyer</button>
+                    {{ form_label(form.telephone, 'user.telephone'|trans) }} {{ form_row(form.telephone) }}
+                    {{ form_label(form.mail, 'user.mail'|trans) }} {{ form_row(form.mail
+                    ) }}
+                    {{ form_label(form.sujet, 'user.sujet'|trans) }} {{ form_row(form.sujet) }}
+                    {{ form_label(form.message, 'user.message'|trans) }} {{ form_row(form.message) }}
+                    <button type="submit" class"btn btn-primary">{{ 'user.envoye'|trans }}</button>
                     {{ form_end(form) }}
                 </div>
             </div>
             <div class="col-md-5">
                 <h2><b>
-			        Notre Adresse
+			        {{ 'body.title3res'|trans }}
 		        </b></h2>
                 <div class="container"><img src="{{ asset('images/home_surfing.png') }}" alt=""/></div><br>
                 <p style="margin-right:10%;">

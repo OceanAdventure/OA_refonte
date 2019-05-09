@@ -32,3 +32,10 @@ reserver:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+admin:
+    path: /{_locale}/admin
+    controller: App\Controller\AdminController::index
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

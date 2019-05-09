@@ -1,6 +1,6 @@
 {% extends 'Structure/Base.html.twig' %}
 
-{% block title %}Réservation Voyage de Surf Ocean Adventure{% endblock %}
+{% block title %}{{ 'body.title1res'|trans }}{% endblock %}
 
 {% block body %}
 	<div class="row">
@@ -20,7 +20,7 @@
                     travelling[@]oceanadventure.surf
                 </p>
                 <h2><b>
-			        Posez votre question
+			        {{ 'body.title2res'|trans }}
 		        </b></h2><br>
                 {% for message in app.flashes('success') %}
                     <div class="alert alert-success">
@@ -30,29 +30,30 @@
                 <div id="clientForm" class="mt-4">
                     {{ form_start(form_res) }}
                     <div class="row">
-                        <div class="col">{{ form_row(form_res.prenom) }}</div>
-                        <div class="col">{{ form_row(form_res.nom) }}</div>
+                        <div class="col">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
+                        <div class="col">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
                     </div>
                         {{ form_row(form_res.niveau) }}
-                        {{ form_row(form_res.mail) }}
-                        {{ form_row(form_res.telephone) }}
+                        {{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}
+                        {{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}
                     <div class="row">
-                        <div class="col">{{ form_row(form_res.type_chambre) }}</div>
-                        <div class="col">{{ form_row(form_res.type_activite) }}</div>
+                        <div class="col">{{ 'user.type_ch'|trans }}{{ form_row(form_res.type_chambre) }}</div>
+                        <div class="col">{{ 'user.type_act'|trans }}{{ form_row(form_res.type_activite) }}</div>
                     </div>
                     <div class="row">
-                        <div class="col">{{ form_row(form_res.date_arr) }}</div>
-                        <div class="col">{{ form_row(form_res.nuitee) }}</div>
+                        <div class="col">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
+                        <div class="col">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
                     </div>
-                    {{ form_rest(form_res) }}
-                    <button type="submit" class"btn btn-primary">Envoyer</button>
+                    {{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}
+                    {{ 'user.message'|trans }}{{ form_row(form_res.message) }}
+                    <button type="submit" class"btn btn-primary">{{ 'user.envoye'|trans }}</button>
                     {{ form_end(form_res) }}
                     <br>
                 </div>
             </div>
             <div class="col-md-5">
                 <h2><b>
-			        Notre Adresse
+			        {{ 'body.title3res'|trans }}
 		        </b></h2><br>
                 <div class="container"><img src="{{ asset('images/home_surfing.png') }}" alt=""/></div><br>
                 <p style="margin-right:10%;">

@@ -21,3 +21,35 @@ body:
   text5: The island of Fuerteventura is only pure sand and sea. At the end of the dunes, you will find turquoise waters and perfectly white sand. Its heavenly beaches and exuberant nature will leave you speechless.
   text6: The island is an authentic refuge of serenity to forget the stress of your daily life. Its crystal clear waters will allow you to recharge your batteries and you will feel renewed. Enjoy these 10 km of beaches just for you. Whether you are a sunbathing enthusiast on the beach or rather eager for sports, on Fuerteventura everyone will find something to occupy their days according to their tastes. The island has beautiful villages and offers you the proximity of the urban centre where you can discover its tropical culture. The influence of Latin American culture on the Canarian people and the young and very European movement of this city.
   
+  
+  text1concept: Our concept is simple and inherited from a life of passion to travel the world to discover waves and people. Surf camps are a trendy concept and schools abound, in Corralejo, Fuerteventura, there are more than 55... more or less good qualities. We help you to see more clearly by selecting for you surfers, real surfers, who offer quality surfing courses and internships but also services that are just as important. We have selected surf camps that are respectful of the environment and endowed with an energy that allows you to really progress in surfing and to emerge from your stay as you grow. Thus almost all of our surf camps offer optional yoga classes, a fundamental mental and physical preparation for surfers.  
+  text2concept: Well more than a surf guide, Nicolas Mercadieu, founder of Océan Expérience will guide you to the best destinations for your learning. Surfer of big waves, experienced in the most powerful reefbreaks and in teaching the youngest on nice beachbreaks, he will know how to guide beginners as well as intermediate surfers towards the best destinations and the best instructors.
+  text3concept: Emeritus surfer, he transmits his passion to teenagers and adults who have been wanting to learn to surf for more than 6 years now. Pedagogue and friendly, he is the surf instructor you need to track the waves between Bidart and Hendaye. Its trucks transport you to the best spot on the Basque coast.
+  text4concept: Talented bodybordeuse, she supports beginner surfers eager to learn surfing in Nazaré. It offers high quality accommodation services and its surf camp has become the place for surfers who surf big waves in winter. For the surfing courses, she has selected qualified instructors, competent and pedagogical. 
+  text5concept: Former pro and surfer of big waves, he is known to have surfed giant waves in Teahupoo, Tahiti with his brother Malik and the other locals... Today, he accompanies beginners in their surfing training on the tropical island of Fuerteventura. 
+  text6concept: A passionate surfer, he has above all great human qualities that have pushed him to develop a real eco lodge in an authentic Indonesia (compared to Bali, 30 years ago). The island of Simeulue was not chosen at random, indeed, it is a real surfing Mecca; waves for beginners all year round and in the right season, waves for the best surfers; reef break and beach break more powerful than the reefs follow each other at the same pace as the tubes follow each other! A true journey into the heart of Indonesian life, the stays they offer go beyond a simple surf trip and invite you to a real human adventure.
+  sousText1concept: Main surfing guide is The Boss!
+  sousText2concept: Basque Coast Surf Guide, Bidart to Hendaye
+  sousText3concept: Nazaré Surfing Guide, Portugal
+  sousText4concept: Surfing guide of Cojalero, Fuerteventura, Canary Islands
+  sousText5concept: Simeulue Surf Guide, Sumatra, Indonesia
+
+
+  title1res: Surf Travel Booking Ocean Adventure
+  title2res: Request a quote and availability
+  title3res: Our Address
+
+
+user:
+  prenom: First Name
+  nom: Name
+  telephone: Phone 
+  mail: Mail
+  sujet: Subject
+  message: Message
+  envoye: Send
+  nuite: Night stay
+  date_arr: Arrival date
+  nb_pers: Number of person
+  type_act: Type of activity
+  type_ch: Room type 

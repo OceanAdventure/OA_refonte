@@ -18,9 +18,9 @@ class ClientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('prenom', TextType::class)
-            ->add('nom', TextType::class)
-            ->add('mail', EmailType::class)
+            ->add('prenom', TextType::class, ['label' => false])
+            ->add('nom', TextType::class, ['label' => false])
+            ->add('mail', EmailType::class, ['label' => false])
             ->add('niveau', ChoiceType::class, [
                 'choices'  => [
                     'Débutant' => 'debutant',
@@ -28,21 +28,21 @@ class ClientType extends AbstractType
                     'Autonome' => 'autonome',
                     'J\'accompagne mon enfant' => 'accompagateur',
                 ]])
-            ->add('telephone', TextType::class)
-            ->add('type_chambre', ChoiceType::class, [
+            ->add('telephone', TextType::class, ['label' => false])
+            ->add('type_chambre', ChoiceType::class, ['label' => false], [
                 'choices'  => [
                     'Collective' => 'collective',
                     'Privée' => 'privee',
                 ]])
-            ->add('type_activite', ChoiceType::class, [
+            ->add('type_activite', ChoiceType::class, ['label' => false], [
                 'choices'  => [
                     'Kite' => 'kite',
                     'Surf' => 'surf',
                 ]])
-            ->add('date_arr', DateType::class, ['label' => 'Date d\'arrivée', 'data' => new \DateTime()])
-            ->add('nuitee', IntegerType::class, ['label' => 'Nuitée', 'attr' => ['value' => 7],])
-            ->add('nb_personne', IntegerType::class, ['label' => 'Nombre de personnes', 'attr' => ['value' => 1],])
-            ->add('message', TextareaType::class)
+            ->add('date_arr', DateType::class, ['label' => false, 'data' => new \DateTime()])
+            ->add('nuitee', IntegerType::class, ['label' => false, 'attr' => ['value' => 7],])
+            ->add('nb_personne', IntegerType::class, ['label' => false, 'attr' => ['value' => 1],])
+            ->add('message', TextareaType::class, ['label' => false])
         ;
     }
 
