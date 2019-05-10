@@ -1,62 +1,44 @@
 {% extends 'Structure/base.html.twig' %}
 
-{% block title %}Produit{% endblock %}
+{% block title %}{{ produit.titrePrincipal }}{% endblock %}
 
 {% block body %}
-    <h1>Produit</h1>
+    <div class="row">
+		<div class="col-md-12">
+        <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="auto" style="margin: 0px; padding: 0px;"/>
+		</div>
+	</div><br><br>
+        <div style="margin-left:10%;" class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <br>
+                    {# https://maryamdev.blogspot.com/2017/10/tuto-symfony-3-upload-dune-image-en.html #}
+                    <div class="container"><img src="{{ asset('images/{{ produit.image }}.png') }}" alt=""/></div><br>               
+                </div>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ produit.id }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ produit.Image }}</td>
-            </tr>
-            <tr>
-                <th>Titre_principal</th>
-                <td>{{ produit.titrePrincipal }}</td>
-            </tr>
-            <tr>
-                <th>Titre_secondaire</th>
-                <td>{{ produit.titreSecondaire }}</td>
-            </tr>
-            <tr>
-                <th>Condition_reglement</th>
-                <td>{{ produit.conditionReglement }}</td>
-            </tr>
-            <tr>
-                <th>Prix</th>
-                <td>{{ produit.prix }}</td>
-            </tr>
-            <tr>
-                <th>Nb_cours</th>
-                <td>{{ produit.nbCours }}</td>
-            </tr>
-            <tr>
-                <th>Descrition</th>
-                <td>{{ produit.descrition }}</td>
-            </tr>
-            <tr>
-                <th>Destination</th>
-                <td>{{ produit.destination }}</td>
-            </tr>
-            <tr>
-                <th>Sport</th>
-                <td>{{ produit.sport }}</td>
-            </tr>
-            <tr>
-                <th>Particulier</th>
-                <td>{{ produit.particulier ? 'Yes' : 'No' }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('produit_index') }}">back to list</a>
-
-    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
-
-    {{ include('produit/_delete_form.html.twig') }}
+                <div class="col-md-5">
+                    <h2><b>
+                        {{ produit.titrePrincipal }}
+                    </b></h2>
+                    <hr width="25%" color="grey" align="left">
+                    {{ produit.prix }}<br>
+                    <br>{{ produit.conditionReglement }}
+                    <div>
+                        <br><button href="#" class="btn btn-primary">Ajouter au panier</button>
+                    </div>
+                    <br>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                            Description
+                        </button>
+                        <div class="dropdown-menu">
+                            <p class="dropdown-item">{{ produit.descrition }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <br><button class="btn btn-outline-secondary btn-sm" href="{{ path('produit_index') }}">back to list</button>
+    <btn class="btn btn-outline-warning btn-sm" href="{{ path('produit_edit', {'id': produit.id}) }}">edit</btn>
+    <btn class="btn btn-outline-danger btn-sm">{{ include('produit/_delete_form.html.twig') }}</btn>
 {% endblock %}

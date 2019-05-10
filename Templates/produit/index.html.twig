@@ -37,8 +37,9 @@
                 <td>{{ produit.sport }}</td>
                 <td>{{ produit.particulier ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
-                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                    <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
+                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">Editer</a>
+                    <a href="{{ path('produit_delete', {'id': produit.id}) }}">Supprimer</a>
                 </td>
             </tr>
         {% else %}
