@@ -2,13 +2,14 @@
 
 {% block title %}Comment Choisir son Séjour Surf ? Guides de Voyage Surf{% endblock %}
 
-{% block body %}
-	<div class="row">
+{% block bandeau %}
 		<div class="col-md-12">
-        <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="auto" style="float:left;"/>
+        	<img src="{{ asset('images/imgConcept.png') }}" alt="" class="img-fluid" width="100%" height="auto" style="margin: 0px; padding: 0px;"/>
 		</div>
-	</div>
+{% endblock %}
 
+{% block body %}
+<main role="main" class="container">
     <div class="container-fluid">
         <div style="margin-left:100px;" class="row">
             <div class="row">
@@ -98,5 +99,5 @@
 	        </div>
         </div>
     </div>
-</div>
+</main>
 {% endblock %}

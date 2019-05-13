@@ -4,9 +4,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="logo">
-            <a href="{{ path('accueil')}}" title="">
-            <img src="{{ asset('images/Ocean-Adventure-logo-small.png') }}" alt=""/>
-            </a>
+                <a href="{{ path('accueil')}}" title="">
+                <img src="{{ asset('images/Ocean-Adventure-logo-small.png') }}" alt=""/>
+                </a>
             </div>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -41,13 +41,13 @@
                         <a style="color: #696969;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Langues
                         </a>
-                    <ul class="navbar-nav">
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr' })) }}">Français</a>
-                        <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en' })) }}">Anglais</a>
-                        <a class="dropdown-item" href="#">Espagnol</a>
-                    </ul>
-                    </div>
+                        <ul class="navbar-nav">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr' })) }}">Français</a>
+                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en' })) }}">Anglais</a>
+                                <a class="dropdown-item" href="#">Espagnol</a>
+                            </div>
+                        </ul>
                     </li>
                 </ul>
             </div>

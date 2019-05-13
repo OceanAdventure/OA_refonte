@@ -33,9 +33,9 @@ reserver:
     requirements:
       _locale: en|fr
 
-admin:
-    path: /{_locale}/admin
-    controller: App\Controller\AdminController::index
+produit_show:
+    path: /{_locale}/produit/{id}
+    controller: App\Controller\ProduitController::show
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr

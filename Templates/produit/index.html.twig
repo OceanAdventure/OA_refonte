@@ -1,0 +1,61 @@
+{% extends 'Structure/base.html.twig' %}
+
+{% block title %}Liste des cours{% endblock %}
+
+{% block body %}
+    <h1>Produit index</h1>
+<div class="table-responsive">
+    <table class="table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>Titre_principal</th>
+                <th>Titre_secondaire</th>
+                <th>Condition_reglement</th>
+                <th>Prix</th>
+                <th>Nb_cours</th>
+                <th>Descrition</th>
+                <th>Destination</th>
+                <th>Sport</th>
+                <th>Particulier</th>
+                <th style="width:10%;">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.Image }}</td>
+                <td>{{ produit.titrePrincipal }}</td>
+                <td>{{ produit.titreSecondaire }}</td>
+                <td>{{ produit.conditionReglement }}</td>
+                <td>{{ produit.prix }}</td>
+                <td>{{ produit.nbCours }}</td>
+                <td>{{ produit.descrition }}</td>
+                <td>{{ produit.destination }}</td>
+                <td>{{ produit.sport }}</td>
+                <td>{{ produit.particulier ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a class="btn btn-secondary btn-sm" href="{{ path('produit_show', {'id': produit.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span> 
+                    </a>
+                    <a class="btn btn-warning btn-sm" href="{{ path('produit_edit', {'id': produit.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="{{ path('produit_delete', {'id': produit.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">Aucun résultat trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <br>
+    &nbsp;<a href="{{ path('produit_new') }}" class="btn btn-outline-secondary btn-sm">Créer un Cours</a>
+{% endblock %}

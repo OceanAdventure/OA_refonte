@@ -2,64 +2,70 @@
 
 {% block title %}{{ 'body.title1res'|trans }}{% endblock %}
 
+{% block bandeau %}
+        <div class="col-md-12">
+            <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="100%" style="margin: 0px; padding: 0px;"/>
+        </div>
+{% endblock %}
+
 {% block body %}
-	<div class="row">
-		<div class="col-md-12">
-        <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="auto" style="margin: 0px; padding: 0px;"/>
-		</div>
-	</div><br><br>
-    <div style="margin-left:10%;" class="container-fluid">
-        <div class="row">
-            <div class="col-md-5">
-                <h2><b>
-			        Ocean Adventure
-		        </b></h2><br>
-                <div class="container"><img src="{{ asset('images/home_surfing.png') }}" alt=""/></div><br>
-                <p>
-                    +33 (0)6 19 03 69 06<br>
-                    travelling[@]oceanadventure.surf
-                </p>
-                <h2><b>
-			        {{ 'body.title2res'|trans }}
-		        </b></h2><br>
-                {% for message in app.flashes('success') %}
-                    <div class="alert alert-success">
-                        {{ message }}
+
+<main role="main" class="container">
+        <br><br>
+
+        <div style="margin-left:2%;" class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2><b>
+                        Ocean Adventure
+                    </b></h2><br>
+                    <div class="container"><img src="{{ asset('images/home_surfing.png') }}" alt=""/></div><br>
+                    <p>
+                        +33 (0)6 19 03 69 06<br>
+                        travelling[@]oceanadventure.surf
+                    </p>
+                    <h2><b>
+                        {{ 'body.title2res'|trans }}
+                    </b></h2><br>
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    <div id="clientForm" class="mt-4">
+                        {{ form_start(form_res) }}
+                        <div class="row">
+                            <div class="col">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
+                            <div class="col">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
+                        </div>
+                            {{ form_row(form_res.niveau) }}
+                            {{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}
+                            {{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}
+                        <div class="row">
+                            <div class="col">{{ form_row(form_res.type_chambre) }}</div>
+                            <div class="col">{{ form_row(form_res.type_activite) }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
+                            <div class="col">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
+                        </div>
+                        {{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}
+                        {{ 'user.message'|trans }}{{ form_row(form_res.message) }}
+                        <button type="submit" class="btn btn-primary">{{ 'user.envoye'|trans }}</button>
+                        {{ form_end(form_res) }}
+                        <br>
                     </div>
-                {% endfor %}
-                <div id="clientForm" class="mt-4">
-                    {{ form_start(form_res) }}
-                    <div class="row">
-                        <div class="col">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
-                        <div class="col">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
-                    </div>
-                        {{ form_row(form_res.niveau) }}
-                        {{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}
-                        {{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}
-                    <div class="row">
-                        <div class="col">{{ 'user.type_ch'|trans }}{{ form_row(form_res.type_chambre) }}</div>
-                        <div class="col">{{ 'user.type_act'|trans }}{{ form_row(form_res.type_activite) }}</div>
-                    </div>
-                    <div class="row">
-                        <div class="col">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
-                        <div class="col">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
-                    </div>
-                    {{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}
-                    {{ 'user.message'|trans }}{{ form_row(form_res.message) }}
-                    <button type="submit" class"btn btn-primary">{{ 'user.envoye'|trans }}</button>
-                    {{ form_end(form_res) }}
-                    <br>
+                </div>
+                <div class="col-md-5" style="margin-left:5%;">
+                    <h2><b>
+                        {{ 'body.title3res'|trans }}
+                    </b></h2><br>
+                    <div class="container"><img src="{{ asset('images/home_surfing.png') }}" alt=""/></div><br>
+                    <p style="margin-right:10%;">
+                        Technopole Izarbel, 231 allée Fauste d'Elhuyar, 64210 Bidart
+                    </p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.1325941303785!2d-1.5689581845976441!3d43.47870317912773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd516b2d71d3c5b5%3A0x540658bb6790a2fa!2sCours+De+Surf+Biarritz%2C+C%C3%B4te+des+Basques+-+Ocean+Adventure!5e0!3m2!1sfr!2sfr!4v1557147433030!5m2!1sfr!2sfr" width="120%" height="50%" frameborder="0" style="margin-right:85px;" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="col-md-5">
-                <h2><b>
-			        {{ 'body.title3res'|trans }}
-		        </b></h2><br>
-                <div class="container"><img src="{{ asset('images/home_surfing.png') }}" alt=""/></div><br>
-                <p style="margin-right:10%;">
-                    Technopole Izarbel, 231 allée Fauste d'Elhuyar, 64210 Bidart
-                </p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2895.1325941303785!2d-1.5689581845976441!3d43.47870317912773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd516b2d71d3c5b5%3A0x540658bb6790a2fa!2sCours+De+Surf+Biarritz%2C+C%C3%B4te+des+Basques+-+Ocean+Adventure!5e0!3m2!1sfr!2sfr!4v1557147433030!5m2!1sfr!2sfr" width="600" height="450" frameborder="0" style="margin-right:85px;" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
+        </div>    
+</main>
 {% endblock %}
