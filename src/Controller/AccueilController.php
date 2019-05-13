@@ -79,4 +79,6 @@ class AccueilController extends AbstractController
         return $this->render('Pages/reservation/reserver.html.twig', ['form_res' => $form_res->createView()
         ]);
     }
+
+    
 }

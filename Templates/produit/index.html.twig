@@ -4,8 +4,8 @@
 
 {% block body %}
     <h1>Produit index</h1>
-
-    <table class="table">
+<div class="table-responsive">
+    <table class="table-bordered table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,7 +19,7 @@
                 <th>Destination</th>
                 <th>Sport</th>
                 <th>Particulier</th>
-                <th>actions</th>
+                <th style="width:10%;">actions</th>
             </tr>
         </thead>
         <tbody>
@@ -37,18 +37,25 @@
                 <td>{{ produit.sport }}</td>
                 <td>{{ produit.particulier ? 'Yes' : 'No' }}</td>
                 <td>
-                    <a href="{{ path('produit_show', {'id': produit.id}) }}">Voir</a>
-                    <a href="{{ path('produit_edit', {'id': produit.id}) }}">Editer</a>
-                    <a href="{{ path('produit_delete', {'id': produit.id}) }}">Supprimer</a>
+                    <a class="btn btn-secondary btn-sm" href="{{ path('produit_show', {'id': produit.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span> 
+                    </a>
+                    <a class="btn btn-warning btn-sm" href="{{ path('produit_edit', {'id': produit.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="{{ path('produit_delete', {'id': produit.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                    </a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="12">no records found</td>
+                <td colspan="12">Aucun résultat trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('produit_new') }}">Create new</a>
+</div>
+    <br>
+    &nbsp;<a href="{{ path('produit_new') }}" class="btn btn-outline-secondary btn-sm">Créer un Cours</a>
 {% endblock %}
