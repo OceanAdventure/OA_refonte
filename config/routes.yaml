@@ -39,3 +39,10 @@ produit_show:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+surf_camp_fuert_show:
+    path: /{_locale}/surfCamp-fuert/{id}
+    controller: App\Controller\SurfCampFuertController::show
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr
