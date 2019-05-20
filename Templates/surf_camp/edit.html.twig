@@ -1,0 +1,13 @@
+{% extends 'structure/base.html.twig' %}>
+
+<title>Edit SurfCamp</title>
+
+{% block body %}
+    <h1>Edit SurfCamp</h1>
+
+    {{ include('surf_camp/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('surf_camp_index') }}">back to list</a>
+
+    {{ include('surf_camp/_delete_form.html.twig') }}
+{% endblock %}

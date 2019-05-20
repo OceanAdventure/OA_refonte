@@ -1,0 +1,70 @@
+{% extends 'structure/base.html.twig' %}
+
+{% block title %}liste des Surf Camps{% endblock %}
+
+{% block body %}
+<div class="table-responsive">
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Destination</th>
+                <th>Titre1</th>
+                <th>Image1</th>
+                <th>Galerie</th>
+                <th>Image2</th>
+                <th>Image3</th>
+                <th>Galerie2</th>
+                <th>Prestation</th>
+                <th>Enumeration</th>
+                <th>GuidePratiqueDestination</th>
+                <th>GoogleMap</th>
+                <th>Tarif</th>
+                <th>HorsSaisonText</th>
+                <th>SaisonText</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for surf_camp in surf_camps %}
+            <tr>
+                <td>{{ surf_camp.id }}</td>
+                <td>{{ surf_camp.destination }}</td>
+                <td>{{ surf_camp.titre1 }}</td>
+                <td>{{ surf_camp.image1 }}</td>
+                <td>{{ surf_camp.galerie }}</td>
+                <td>{{ surf_camp.image2 }}</td>
+                <td>{{ surf_camp.image3 }}</td>
+                <td>{{ surf_camp.galerie2 }}</td>
+                <td>{{ surf_camp.prestation }}</td>
+                <td>{{ surf_camp.enumeration }}</td>
+                <td>{{ surf_camp.guidePratiqueDestination }}</td>
+                <td>{{ surf_camp.googleMap }}</td>
+                <td>{{ surf_camp.tarif }}</td>
+                <td>{{ surf_camp.horsSaisonText }}</td>
+                <td>{{ surf_camp.saisonText }}</td>
+                <td style="width:10%;">
+                    <a class="btn btn-secondary btn-sm" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span> 
+                    </a>
+                    <a class="btn btn-warning btn-sm" href="{{ path('surf_camp_edit', {'id': surf_camp.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="{{ path('surf_camp_delete', {'id': surf_camp.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="22">Aucun surf camps trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('surf_camp_new') }}">Créer un nouveau Surf Camps</a>
+</div>
+{% endblock %}

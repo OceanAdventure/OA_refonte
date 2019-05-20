@@ -62,3 +62,6 @@ user:
   type_act: Type d'activité
   type_ch: Type de chambre
   collective: Collective
+
+produit:
+  titrePrincipal: [yo, Cours de surf nique Bidart, Stage de 3 Cours de Surf débutant / intermédaire]

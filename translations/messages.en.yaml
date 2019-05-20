@@ -53,3 +53,6 @@ user:
   nb_pers: Number of person
   type_act: Type of activity
   type_ch: Room type 
+
+produit:
+  titrePrincipal: [yo, yo, Cours de  nique Bidart, Stage de 3 Cours de Surf débutant / intermédaire]
