@@ -22,7 +22,7 @@ class SurfCamp
     private $destination;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $titre1;
 
@@ -77,17 +77,17 @@ class SurfCamp
     private $galerie2;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $prestation;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text")
      */
     private $enumeration;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $guidePratiqueDestination;
 
@@ -97,7 +97,7 @@ class SurfCamp
     private $texteInfo;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $googleMap;
 

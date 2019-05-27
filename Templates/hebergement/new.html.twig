@@ -1,0 +1,13 @@
+{% extends 'structure/base.html.twig' %}
+
+{% block title %}New Hebergement{% endblock %}
+
+{% block body %}
+<main role="main" class="container">
+    <br><br>
+
+    {{ include('hebergement/_form.html.twig') }}
+
+    <a href="{{ path('hebergement_index') }}">back to list</a>
+</main>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'structure/base.html.twig' %}
+
+{% block title %}Hebergement index{% endblock %}
+
+{% block body %}
+    <br><br>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>GrandTitre</th>
+                <th>Situation</th>
+                <th>DescriptionSsTitre</th>
+                <th>Image1</th>
+                <th>SsText</th>
+                <th>TypeDeChambre</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hebergement in hebergements %}
+            <tr>
+                <td>{{ hebergement.id }}</td>
+                <td>{{ hebergement.grandTitre | raw }}</td>
+                <td>{{ hebergement.situation }}</td>
+                <td>{{ hebergement.descriptionSsTitre | raw }}</td>
+                <td><img alt="" src="{{ asset('upload/'~hebergement.image1~'') }}" width="50%" height="20%" style="margin: 0px; padding: 0px;" /></td>
+                <td>{{ hebergement.ssText | raw }}</td>
+                <td>{{ hebergement.typeDeChambre | raw }}</td>
+                <td style="width:10%;">
+                    <a class="btn btn-secondary btn-sm" href="{{ path('hebergement_show', {'id': hebergement.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-eye"></i></span> 
+                    </a>
+                    <a class="btn btn-warning btn-sm" href="{{ path('hebergement_edit', {'id': hebergement.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="{{ path('hebergement_delete', {'id': hebergement.id}) }}">
+                        <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">Aucun hébergement</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    &nbsp;<a href="{{ path('hebergement_new') }}" class="btn btn-outline-secondary btn-sm">Créer un nouvel hébergement</a>
+    <a href="{{ path('admin') }}" class="btn btn-outline-primary btn-sm">Page admin</a>
+{% endblock %}

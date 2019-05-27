@@ -13,6 +13,8 @@ use App\Notification\ClientNotification;
 use App\Entity\Client;
 use App\Form\ClientType;
 use App\Repository\ClientRepository;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Compnent\HttpFoundation\File\File;
 
 /**
  * @Route("/sur-camp")
@@ -39,6 +41,22 @@ class SurfCampController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('image1')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $surfCamp->setImage1($filename);
+
+            $file = $form->get('image2')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $surfCamp->setImage2($filename);
+
+            $file = $form->get('image3')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $surfCamp->setImage3($filename);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($surfCamp);
             $entityManager->flush();
@@ -81,6 +99,22 @@ class SurfCampController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('image1')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $surfCamp->setImage1($filename);
+
+            $file = $form->get('image2')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $surfCamp->setImage2($filename);
+
+            $file = $form->get('image3')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $surfCamp->setImage3($filename);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('surf_camp_index', [
