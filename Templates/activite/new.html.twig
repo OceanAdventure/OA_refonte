@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+{% extends 'structure/base.html.twig' %}
 
-<title>New Activite</title>
+{% block title %}Nouvelle Activité{% endblock %}
 
 {% block body %}
-    <h1>Create new Activite</h1>
+<main role="main" class="container"><br><br>
 
     {{ include('activite/_form.html.twig') }}
 
-    <a href="{{ path('activite_index') }}">back to list</a>
+    <a href="{{ path('activite_index') }}">Retour à la liste</a>
+</main>
 {% endblock %}

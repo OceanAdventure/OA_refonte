@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\SurfCampFuert;
 use App\Form\SurfCampFuertType;
 use App\Repository\SurfCampFuertRepository;
+use App\Repository\ActiviteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,14 +14,12 @@ use App\Notification\ClientNotification;
 use App\Entity\Client;
 use App\Form\ClientType;
 use App\Repository\ClientRepository;
+use Symfony\Compnent\HttpFoundation\File\File;
 
-/**
- * @Route("/surfCamp-fuert")
- */
 class SurfCampFuertController extends AbstractController
 {
     /**
-     * @Route("/", name="surf_camp_fuert_index", methods={"GET"})
+     * @Route("/admin/surfCamp-fuert/", name="surf_camp_fuert_index", methods={"GET"})
      */
     public function index(SurfCampFuertRepository $surfCampFuertRepository): Response
     {
@@ -30,7 +29,7 @@ class SurfCampFuertController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="surf_camp_fuert_new", methods={"GET","POST"})
+     * @Route("/admin/surfCamp-fuert/new", name="surf_camp_fuert_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -55,7 +54,7 @@ class SurfCampFuertController extends AbstractController
     /**
      * @Route("/{id}", name="surf_camp_fuert_show", methods={"GET"})
      */
-    public function show(SurfCampFuert $surfCampFuert, Request $request, ClientNotification $notification_res): Response
+    public function show(ActiviteRepository $activiteRepository, SurfCampFuert $surfCampFuert, Request $request, ClientNotification $notification_res): Response
     {
         $client = new Client();
         $form_res = $this->createForm(ClientType::class, $client);
@@ -68,12 +67,13 @@ class SurfCampFuertController extends AbstractController
         }
         
         return $this->render('surf_camp_fuert/show.html.twig', [
-            'surf_camp_fuert' => $surfCampFuert, 'form_res' => $form_res->createView()
+            'surf_camp_fuert' => $surfCampFuert, 'form_res' => $form_res->createView(),
+            'activite' => $activiteRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="surf_camp_fuert_edit", methods={"GET","POST"})
+     * @Route("/admin/surfCamp-fuert/{id}/edit", name="surf_camp_fuert_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, SurfCampFuert $surfCampFuert): Response
     {
@@ -95,7 +95,7 @@ class SurfCampFuertController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="surf_camp_fuert_delete", methods={"DELETE"})
+     * @Route("/admin/surfCamp-fuert/{id}", name="surf_camp_fuert_delete", methods={"DELETE"})
      */
     public function delete(Request $request, SurfCampFuert $surfCampFuert): Response
     {

@@ -22,12 +22,12 @@ class SurfCampFuert
     private $grandTitre;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $titreAccroche;
 
     /**
-     * @ORM\Column(type="string", length=1000)
+     * @ORM\Column(type="text")
      */
     private $paragraphe1;
 

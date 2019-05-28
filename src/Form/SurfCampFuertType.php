@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class SurfCampFuertType extends AbstractType
 {
@@ -14,8 +16,8 @@ class SurfCampFuertType extends AbstractType
     {
         $builder
             ->add('grandTitre')
-            ->add('titreAccroche')
-            ->add('paragraphe1', TextareaType::class)
+            ->add('titreAccroche', CKEditorType::class)
+            ->add('paragraphe1', CKEditorType::class)
         ;
     }
 

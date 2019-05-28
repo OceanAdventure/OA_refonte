@@ -1,28 +1,19 @@
-<!DOCTYPE html>
+{% extends 'structure/base.html.twig' %}
 
-<title>Activite</title>
 
+{% block title %}Activite{% endblock %}
+{% block bandeau %}
+        <div class="col-md-12">
+            <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="100%" style="margin: 0; padding: 0; position: relative;"/>
+        </div>
+{% endblock %}
 {% block body %}
-    <h1>Activite</h1>
+<main role="main" class="container"><br><br>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ activite.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ activite.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ activite.description }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ activite.image }}</td>
-            </tr>
+    {{ activite.titre | raw }}
+    {{ activite.description | raw }}
+    <img alt="" src="{{ asset('upload/'~activite.image~'') }}" class="img-thumbnail" width="100%" height="20%" />
+            
         </tbody>
     </table>
 

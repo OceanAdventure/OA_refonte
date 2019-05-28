@@ -10,13 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/hebergement")
- */
+
 class HebergementController extends AbstractController
 {
     /**
-     * @Route("/", name="hebergement_index", methods={"GET"})
+     * @Route("/admin/hebergement/", name="hebergement_index", methods={"GET"})
      */
     public function index(HebergementRepository $hebergementRepository): Response
     {
@@ -26,7 +24,7 @@ class HebergementController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="hebergement_new", methods={"GET","POST"})
+     * @Route("/admin/hebergement/new", name="hebergement_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -55,7 +53,7 @@ class HebergementController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="hebergement_show", methods={"GET"})
+     * @Route("/hebergement/{id}", name="hebergement_show", methods={"GET"})
      */
     public function show(Hebergement $hebergement): Response
     {
@@ -65,7 +63,7 @@ class HebergementController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="hebergement_edit", methods={"GET","POST"})
+     * @Route("/admin/hebergement/{id}/edit", name="hebergement_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Hebergement $hebergement): Response
     {
@@ -93,7 +91,7 @@ class HebergementController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="hebergement_delete", methods={"DELETE"})
+     * @Route("/admin/hebergement/{id}", name="hebergement_delete", methods={"DELETE"})
      */
     public function delete(Request $request, Hebergement $hebergement): Response
     {

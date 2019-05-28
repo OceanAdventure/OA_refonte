@@ -1,3 +1,4 @@
+  
     <header>
         <nav class="navbar  navbar-expand-lg fixed-top" style="background-color:#F5F5F5;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,10 @@
                             Surf camps
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ path('fuert') }}">Fuerteventura</a>
+                            <a class="dropdown-item" href="#">Fuerteventura</a>
+{#                             {% for surf_camp in surf_camps %}
+                                <a class="dropdown-item" href="#">{{ surf_camp.destination | raw }}</a>
+                            {% endfor %} #}
                         </div>
                     </li>
                     <li class="nav-item active">

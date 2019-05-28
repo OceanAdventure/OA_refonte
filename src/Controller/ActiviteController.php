@@ -35,6 +35,12 @@ class ActiviteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('image')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $activite->setImage($filename);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($activite);
             $entityManager->flush();
@@ -67,6 +73,12 @@ class ActiviteController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('image')->getData();
+            $filename = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('uploads_directory'), $filename);
+            $activite->setImage($filename);
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('activite_index', [

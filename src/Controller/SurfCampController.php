@@ -16,13 +16,11 @@ use App\Repository\ClientRepository;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Compnent\HttpFoundation\File\File;
 
-/**
- * @Route("/sur-camp")
- */
+
 class SurfCampController extends AbstractController
 {
     /**
-     * @Route("/", name="surf_camp_index", methods={"GET"})
+     * @Route("/admin/surf-camp/", name="surf_camp_index", methods={"GET"})
      */
     public function index(SurfCampRepository $surfCampRepository): Response
     {
@@ -32,7 +30,7 @@ class SurfCampController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="surf_camp_new", methods={"GET","POST"})
+     * @Route("/admin/surf-camp/new", name="surf_camp_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -71,7 +69,7 @@ class SurfCampController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="surf_camp_show", methods={"GET"})
+     * @Route("/surf-camp/{id}", name="surf_camp_show", methods={"GET"})
      */
     public function show(SurfCamp $surfCamp, Request $request, ClientNotification $notification_res): Response
     {
@@ -91,7 +89,7 @@ class SurfCampController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="surf_camp_edit", methods={"GET","POST"})
+     * @Route("/admin/surf-camp/{id}/edit", name="surf_camp_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, SurfCamp $surfCamp): Response
     {
@@ -129,7 +127,7 @@ class SurfCampController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="surf_camp_delete", methods={"DELETE"})
+     * @Route("/admin/surf-camp/{id}", name="surf_camp_delete", methods={"DELETE"})
      */
     public function delete(Request $request, SurfCamp $surfCamp): Response
     {

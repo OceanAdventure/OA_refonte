@@ -1,6 +1,6 @@
 {% extends 'structure/base.html.twig' %}
 
-{% block title %}SurfCampFuert index{% endblock %}
+{# {% block title %}SurfCampFuert index{% endblock %}
 
 {% block body %}
 <div class="table-responsive">
@@ -44,4 +44,61 @@
 
     <a href="{{ path('surf_camp_fuert_new') }}">créer un nouveau</a>
 </div>
+{% endblock %} #}
+
+{% block title %}Surf Camps Fuerte{% endblock %}
+
+{% block body %}
+<main role="main" class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-xs-12">
+                    <h2 class="class-title">Surf Camps Fuerte</h2>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{ path('admin') }}" class="btn btn-outline-primary btn-sm">Retour</a>
+                    <a href="{{ path('surf_camp_fuert_new') }}" class="btn btn-outline-primary btn-sm">Ajouter un nouveau Surf Camps</a>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">GrandTitre</th>
+                                <th scope="col">TitreAccroche</th>
+                                <th scope="col">Paragraphe1</th>
+                                <th scope="col">actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for surf_camp_fuert in surf_camp_fuerts %}
+                                <tr>
+                                    <td>{{ surf_camp_fuert.id }}</td>
+                                    <td>{{ surf_camp_fuert.grandTitre }}</td>
+                                    <td>{{ surf_camp_fuert.titreAccroche }}</td>
+                                    <td>{{ surf_camp_fuert.paragraphe1 }}</td>
+                                    <td style="width:15%;">
+                                        <a class="btn btn-secondary btn-sm" href="{{ path('surf_camp_fuert_show', {'id': surf_camp_fuert.id}) }}">
+                                            <span class="btn-inner--icon"><i class="fas fa-eye"></i></span> 
+                                        </a>
+                                        <a class="btn btn-warning btn-sm" href="{{ path('surf_camp_fuert_edit', {'id': surf_camp_fuert.id}) }}">
+                                            <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" href="{{ path('surf_camp_fuert_delete', {'id': surf_camp_fuert.id}) }}">
+                                            <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock %}

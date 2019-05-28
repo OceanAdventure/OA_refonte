@@ -20,11 +20,11 @@
                 <p>
                     {{ surf_camp.miniDescription | raw }}
                 </p>
-                <img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="20%" style="margin: 0px; padding: 0px;" />
+                <img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
                 <br><br>
                 <div class-"row">
                     <div class="col-md-12">
-                    {{ surf_camp.galerie }}
+                    {{ surf_camp.galerie | raw }}
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                 <br>
                 <div class="row">
                     <div class="col-md-12" style="position: relative; overflow:hidden;">
-                                {{ surf_camp.galerie2 }}
+                                {{ surf_camp.galerie2 | raw }}
                     </div>
                 </div>
                 <br>

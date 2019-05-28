@@ -37,7 +37,7 @@ class SurfCamp
     private $image1;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $galerie;
 
@@ -72,7 +72,7 @@ class SurfCamp
     private $sstext3;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $galerie2;
 

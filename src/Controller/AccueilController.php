@@ -26,15 +26,22 @@ class AccueilController extends AbstractController
      */
     public function pageAccueil()
     {
-        return $this->render('Pages/accueil.html.twig');
+        return $this->render('pages/accueil.html.twig');
     }
+
+/*     public function menuSurf(SurfCampRepository $surfCampRepo)
+    {
+        $surf = $surfCampRepo->findAll();
+        $this->render('structure/header.html.twig', [
+            'surf_camps' => $surf, ]);
+    } */
 
     /**
      * @Route("/fuerteventura", name="fuert", methods="GET")
      */
     public function fuerteventura()
     {
-        return $this->render('Pages/fuert.html.twig');
+        return $this->render('pages/fuert.html.twig');
     }
 
     /**
@@ -42,7 +49,7 @@ class AccueilController extends AbstractController
      */
     public function concept_contact()
     {
-        return $this->render('Pages/contact/concept.html.twig');
+        return $this->render('pages/contact/concept.html.twig');
     }
 
     /**
@@ -60,7 +67,7 @@ class AccueilController extends AbstractController
             return $this->redirectToRoute('contact');
         }
 
-        return $this->render('Pages/contact/contact.html.twig', ['form' => $form->createView()
+        return $this->render('pages/contact/contact.html.twig', ['form' => $form->createView()
         ]);
     }
 
@@ -79,7 +86,7 @@ class AccueilController extends AbstractController
             return $this->redirectToRoute('reserver');
         }
 
-        return $this->render('Pages/reservation/reserver.html.twig', ['form_res' => $form_res->createView()
+        return $this->render('pages/reservation/reserver.html.twig', ['form_res' => $form_res->createView()
         ]);
     }
 

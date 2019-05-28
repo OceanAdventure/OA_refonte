@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+{% extends 'structure/base.html.twig' %}
 
-<title>Edit Activite</title>
+{% block title %}Edit Activite{% endblock %}
 
 {% block body %}
-    <h1>Edit Activite</h1>
+<main role="main" class="container">
+    <br><br>
 
     {{ include('activite/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('activite_index') }}">back to list</a>
 
     {{ include('activite/_delete_form.html.twig') }}
+</main>
 {% endblock %}
