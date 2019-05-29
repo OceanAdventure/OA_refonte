@@ -40,7 +40,7 @@
                                         <a class="btn btn-warning btn-sm" href="{{ path('surf_camp_edit', {'id': surf_camp.id}) }}">
                                             <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                                         </a>
-                                        <a class="btn btn-danger btn-sm" href="{{ path('surf_camp_delete', {'id': surf_camp.id}) }}">
+                                        <a class="btn btn-danger btn-sm">{{ include('surf_camp/_delete_form.html.twig') }}
                                             <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                                         </a>
                                     </td>

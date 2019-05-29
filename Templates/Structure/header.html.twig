@@ -1,6 +1,6 @@
   
     <header>
-        <nav class="navbar  navbar-expand-lg fixed-top" style="background-color:#F5F5F5;">
+        <nav class="navbar  navbar-expand-lg fixed-top navbar-light bg-light" style="background-color:#F5F5F5;">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -16,10 +16,12 @@
                             Surf camps
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Fuerteventura</a>
-{#                             {% for surf_camp in surf_camps %}
-                                <a class="dropdown-item" href="#">{{ surf_camp.destination | raw }}</a>
-                            {% endfor %} #}
+                            {% for surf_camp_fuert in surf_camp_fuerts %}
+                            <a class="dropdown-item" href="{{ path('surf_camp_fuert_show', {'id': surf_camp_fuert.id}) }}">Fuerteventura</a>
+                            {% endfor %}
+                            {% for surf_camp in surf_camps %}
+                                <a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}">{{ surf_camp.destination | raw }}</a>
+                            {% endfor %}
                         </div>
                     </li>
                     <li class="nav-item active">
@@ -43,13 +45,12 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a style="color: #696969;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Langues
+                            Langue
                         </a>
                         <ul class="navbar-nav">
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr' })) }}">Français</a>
-                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en' })) }}">Anglais</a>
-                                <a class="dropdown-item" href="#">Espagnol</a>
+                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr' })) }}"><img src="{{ asset('images/france-flag-3d-icon-16.png') }}" alt="" wdth="100%" height="100%" style="position: right;"/>&nbsp;Français</a>
+                                <a class="dropdown-item" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en' })) }}"><img src="{{ asset('images/united-kingdom-flag-3d-icon-16.png') }}" alt=""/>&nbsp;Anglais</a>
                             </div>
                         </ul>
                     </li>

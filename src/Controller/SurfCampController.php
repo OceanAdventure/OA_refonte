@@ -127,7 +127,7 @@ class SurfCampController extends AbstractController
     }
 
     /**
-     * @Route("/admin/surf-camp/{id}", name="surf_camp_delete", methods={"DELETE"})
+     * @Route("/admin/surf-camp/{id}/delete", name="surf_camp_delete", methods={"DELETE"})
      */
     public function delete(Request $request, SurfCamp $surfCamp): Response
     {
