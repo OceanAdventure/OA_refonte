@@ -67,3 +67,10 @@ activite_show:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+presentation_surfcamps:
+    path: /{_locale}/surf-camps
+    controller: App\Controller\AccueilController::presentationSurfcamps
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

@@ -8,11 +8,14 @@ use App\Entity\Contact;
 use App\Form\ContactType;
 use App\Entity\Client;
 use App\Entity\SurfCamp;
+use App\Entity\SurfCampFuert;
 use App\Form\ClientType;
 use App\Form\SurfCampType;
+use App\Form\SurfCampFuertType;
 use App\Repository\ContactRepository;
 use App\Repository\ClientRepository;
 use App\Repository\SurfCampRepository;
+use App\Repository\SurfCampFuertRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use App\Notification\ContactNotification;
@@ -90,5 +93,15 @@ class AccueilController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/surf-camps", name="presentation_surfcamps", methods="GET")
+     */
+    public function presentationSurfcamps(SurfCampRepository $surfCampRepo, SurfCampFuertRepository $surfCampFuertRepo)
+    {
+        return $this->render('pages/presentationSurfCamps.html.twig', [
+            'surf_camps' => $surfCampRepo->findAll(),
+            'surf_camp_fuerts' => $surfCampFuertRepo->findAll(),
+        ]);
+    }
     
 }

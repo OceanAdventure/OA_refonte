@@ -3,11 +3,96 @@
 {% block title %}accueil{% endblock %}
 
 {% block body %}
-    <main role="main" class="container">
-	    <div class="row">
-		    <div class="col-md-12">
-                <br><img src="{{ asset('images/home_surfing_slider.jpg') }}" alt="" width="100%" height="80%"/>
-		    </div>
+<main role="main" class="container">
+	<div class="row">	
+		<div class="container-fluid">
+            <br><img src="{{ asset('images/home_surfing_slider.jpg') }}" alt="" class="img-fluid" style="left:0; top:0;max-width: 100%; height: auto; " width="100%"/>
 	    </div>
-	</main>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="container-fluid">
+					<img src="{{ asset('images/imgCouples.jpg') }}" class="img-fluid" alt="" style="left:0; top:0;max-width: 100%; height: auto; " width="100%"/>
+				</div>
+			</div>
+			<div class="col-md-4"><br>
+				<div class="container-fluid">
+					<center><img src="{{ asset('images/home_surfing.png') }}" alt="" width="20%"/></center><br>
+					<center><h1>SOLEIL & VAGUES</h1></center><br>
+					<center><p>Vous rêvez d'un séjour détente et sport ?</p></center>
+					<br>
+					<center><p>Il n'existe pas de plus grand plaisir que de surfer et<br>chiller sur la plage en attendant de surfer encore !</p></center><br><br>
+					<center><a type="button" class="btn btn-info" href="{{ path('presentation_surfcamps') }}">Voir nos surf camps</a></center><br>
+				</div>
+			</div>
+			<br>
+			<div class="col-md-12">
+				<div class="container-fluid">
+					<center><h2>Voyage Surf: découvrez les Meilleures Destinations Surf de 2019 !</h2></center><br>
+					<center><p><font size="-1">Vous vous demandez ou vous allez passer vos vacances surf de 2019 ? Nous avons sélectionné pour vous des surf camps, eco lodge et surf resort qui valent le détour.</font></p></center>
+				</div>
+			</div>
+			<br><br><div class="col-md-6">
+				<div class="container-fluid">
+					<center><font size="-1">
+					<h2>Pourquoi choisir nos surf camps ?</h2>
+					<h3>Petits Prix et ambiance surf</h3>
+					<p>Vous y retrouverez l'ambiance surf camp des auberges de jeunesse avec des individus jeunes et des moins jeunes qui passent leur journée à déchirer les vagues. Vous pourrez partager votre passion le soir autour d'un bon barbecue !</p>
+					<h3>Confort et intimité </h3>
+					<p>L'ambiance c'est bien mais quand on est en couple, ou en famille, on a besoin de son espace. Des chambres doubles ou des appartements composent nos surf camps.</p>
+					<h3>Progresser vraiment en surf</h3>
+					<p>Une formidable expérience dans des lieux et avec des moniteurs de haut vol. Des vrais surfeurs, anciens pro parfois, vous aideront à progresser (vraiment) dans des lieux exceptionnels, que ce soit à la côte des basques, à Biarritz, sur le beach break de la vague géante de Nazaré (Portugal) ou sur les plages de sable blanc de Fuerteventura aux Canaries.</p>
+					</font></center>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="container-fluid">
+					{% for surf_camp in surf_camps %}
+						<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2>{{ surf_camp.destination | raw }}</h2><br>
+						<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+						</a></center><br>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="container-fluid">
+					{% for surf_camp_fuert in surf_camp_fuerts %}
+						<center><a class="dropdown-item" href="{{ path('surf_camp_fuert_show', {'id': surf_camp_fuert.id}) }}"><h2>{{ surf_camp_fuert.grandTitre | raw }}</h2><br>
+						<img alt="" src="{{ asset('images/SCF.jpg') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+						</a></center><br><br>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="container-fluid">
+					{% for surf_camp in surf_camps %}
+						<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2>{{ surf_camp.destination | raw }}</h2><br>
+						<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+						</a></center><br>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-md-6">
+			</div>
+			<div class="col-md-4">
+				<div class="container-fluid">
+					<center><img src="{{ asset('images/home_surfing.png') }}" alt="" width="20%"/></center><br>
+					<center><h2>Formules surf camp</h2><br>
+					<h4>Débutant ou intermédiaire</h4><br>
+					<p>Avec des planches de surf en mousse ou en résine, nous vous ferons progresser. Nous aborderons des vagues de sable douces (à marée basse) pour les débutants, ou un autre type de vague que pour les niveaux intermédiaires et tube riders. </p>
+					<br>
+					<h4>Adulte et Adolescents</h4>
+					<p>Un surf camp c'est un stage de surf avec hébergement avec tout inclus pour les adolescents, ou avec seulement le stage de surf (cours + transport) et l'hébergement pour les adultes</p><br>
+					<a type="button" class="btn btn-info" href="">Formules du Surf Camp</a></center><br>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="container-fluid">
+					<img alt="" src="{{ asset('images/planches.jpg') }}" width="100%" height="100%" style="margin: 0px; padding: 0px;" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+</main>
 {% endblock %}
