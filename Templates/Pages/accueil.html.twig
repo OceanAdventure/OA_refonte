@@ -3,8 +3,8 @@
 {% block title %}accueil{% endblock %}
 
 {% block body %}
-<main role="main" class="container">
-	<div class="row">	
+{# <main role="main" class="container"> #}
+	<div class="container-fluid">	
 		<div class="container-fluid">
             <br><img src="{{ asset('images/home_surfing_slider.jpg') }}" alt="" class="img-fluid" style="left:0; top:0;max-width: 100%; height: auto; " width="100%"/>
 	    </div>
@@ -16,6 +16,7 @@
 			</div>
 			<div class="col-md-4"><br>
 				<div class="container-fluid">
+					<br><br>
 					<center><img src="{{ asset('images/home_surfing.png') }}" alt="" width="20%"/></center><br>
 					<center><h1>SOLEIL & VAGUES</h1></center><br>
 					<center><p>Vous rêvez d'un séjour détente et sport ?</p></center>
@@ -24,7 +25,9 @@
 					<center><a type="button" class="btn btn-info" href="{{ path('presentation_surfcamps') }}">Voir nos surf camps</a></center><br>
 				</div>
 			</div>
+			<div>
 			<br>
+			</div>
 			<div class="col-md-12">
 				<div class="container-fluid">
 					<center><h2>Voyage Surf: découvrez les Meilleures Destinations Surf de 2019 !</h2></center><br>
@@ -94,5 +97,5 @@
 
 		</div>
 	</div>
-</main>
+{# </main> #}
 {% endblock %}

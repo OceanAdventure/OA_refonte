@@ -32,7 +32,7 @@
         <font size="+4"><center>Activités Fuerteventura, Corralejo</center></font>
         <br><div class="row"> 
             {% for activites in activite %}
-                <div class="col-md-6" style="">
+                <div class="col-md-6">
                     {{ activites.titre | raw }}
                     {{ activites.description | raw }}
                     <a href="{{ path('activite_show', {'id': activites.id}) }}">
