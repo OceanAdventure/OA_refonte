@@ -74,3 +74,10 @@ presentation_surfcamps:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+groupe:
+    path: /{_locale}/sejour-surf-groupes
+    controller: App\Controller\AccueilController::groupe
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

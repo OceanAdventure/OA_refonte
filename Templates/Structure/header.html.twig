@@ -24,14 +24,25 @@
                             {% endfor %}
                         </div>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item dropdown">
                         <a style="color: #696969;" class="nav-link dark" href="#">Kite</a>  
                     </li>
-                    <li class="nav-item active">
-                        <a style="color: #696969;" class="nav-link " href="#">Cours</a>
+                    <li class="nav-item dropdown">
+                        <a style="color: #696969;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cours</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="https://oceanadventure.surf/biarritz-pays-basque/coursdesurf-hendaye/">Hendaye</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/biarritz-pays-basque/coursdesurf-stjeandeluz/">Saint Jean de Luz</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/biarritz-pays-basque/coursdesurf-bidart/">Bidart</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/biarritz-pays-basque/ecoledesurf-guethary/">Guéthary</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/biarritz-pays-basque/coursdesurf/">Biarritz La Cote des Basques</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/biarritz-pays-basque/coursdesurf-anglet/">Anglet Chambre d'Amour</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/hossegor/coursdesurf-hossegor/">Hossegor</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/nazare-portugal-2/coursdesurf-nazare-portugal/">Nazaré, Portugal</a>
+                                <a class="dropdown-item" href="https://oceanadventure.surf/fuerteventura-canaries/surfcamp/cours-surf-corralejo/">Corralejo Fuerteventura</a>
+                        </div>
                     </li>
                     <li class="nav-item active">
-                        <a style="color: #696969;" class="nav-link " href="#">Groupes</a>
+                        <a style="color: #696969;" class="nav-link " href="{{ path('groupe')}}">Groupes</a>
                     </li>
                     <li class="nav-item active">
                         <a style="color: #696969;" class="nav-link " href="{{ path('reserver') }}">Réserver</a>

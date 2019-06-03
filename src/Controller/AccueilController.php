@@ -104,4 +104,14 @@ class AccueilController extends AbstractController
         ]);
     }
     
+    /**
+     * @Route("/sejour-surf-groupes", name="groupe", methods="GET")
+     */
+    public function groupe(SurfCampRepository $surfCampRepo, SurfCampFuertRepository $surfCampFuertRepo)
+    {
+        return $this->render('pages/groupe.html.twig', [
+            'surf_camps' => $surfCampRepo->findAll(),
+            'surf_camp_fuerts' => $surfCampFuertRepo->findAll(),
+        ]);
+    }
 }
