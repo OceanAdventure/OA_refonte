@@ -116,6 +116,11 @@ class SurfCamp
      */
     private $saisonText;
 
+    /**
+     * @ORM\Column(type="string", length=20)
+     */
+    private $locale;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -357,6 +362,18 @@ class SurfCamp
     public function setSaisonText(?string $saisonText): self
     {
         $this->saisonText = $saisonText;
+
+        return $this;
+    }
+
+    public function getLocale(): ?string
+    {
+        return $this->locale;
+    }
+
+    public function setLocale(string $locale): self
+    {
+        $this->locale = $locale;
 
         return $this;
     }

@@ -22,6 +22,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Id</th>
+                                <th scope="col">Langue</th>
                                 <th scope="col">Destination</th>
                                 <th scope="col">Tarif</th>
                                 <th scope="col">actions</th>
@@ -31,6 +32,7 @@
                             {% for surf_camp in surf_camps %}
                                 <tr>
                                     <td>{{ surf_camp.id }}</td>
+                                    <td>{{ surf_camp.locale }}</td>
                                     <td>{{ surf_camp.destination | raw }}</td>
                                     <td>{{ surf_camp.tarif }}</td>
                                     <td>
@@ -40,8 +42,10 @@
                                         <a class="btn btn-warning btn-sm" href="{{ path('surf_camp_edit', {'id': surf_camp.id}) }}">
                                             <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
                                         </a>
+                                        <a class="btn btn-success btn-sm" href="{{ path('surf_camp_duplicate', {'id': surf_camp.id}) }}">
+                                            <span class="btn-inner--icon"><i class="fas fa-copy"></i></span> 
+                                        </a>
                                         <a class="btn btn-danger btn-sm">{{ include('surf_camp/_delete_form.html.twig') }}
-                                            <span class="btn-inner--icon"><i class="fas fa-trash-alt"></i></span>
                                         </a>
                                     </td>
                                 </tr>

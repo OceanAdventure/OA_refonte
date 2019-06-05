@@ -139,4 +139,39 @@ class SurfCampController extends AbstractController
 
         return $this->redirectToRoute('surf_camp_index');
     }
+
+    /**
+     * @Route("/admin/surf-camp/{id}/duplicate", name="surf_camp_duplicate", methods={"GET","POST"})
+     */
+    public function duplicate(Request $request, SurfCamp $surfCamp): Response
+    {
+        $dsurfCamp = new SurfCamp();
+        $dsurfCamp->setDestination($surfCamp->getDestination(). '-Duplicata');
+        $dsurfCamp->setTitre1($surfCamp->getTitre1());
+        $dsurfCamp->setMiniDescription($surfCamp->getMiniDescription());
+        $dsurfCamp->setImage1($surfCamp->getImage1());
+        $dsurfCamp->setGalerie($surfCamp->getGalerie());
+        $dsurfCamp->setImage2($surfCamp->getImage2());
+        $dsurfCamp->setSstitre2($surfCamp->getSstitre2());
+        $dsurfCamp->setSstext2($surfCamp->getSstext2());
+        $dsurfCamp->setImage3($surfCamp->getImage3());
+        $dsurfCamp->setSstitre3($surfCamp->getSstitre3());
+        $dsurfCamp->setSstext3($surfCamp->getSstext3());
+        $dsurfCamp->setGalerie2($surfCamp->getGalerie2());
+        $dsurfCamp->setPrestation($surfCamp->getPrestation());
+        $dsurfCamp->setEnumeration($surfCamp->getEnumeration());
+        $dsurfCamp->setGuidePratiqueDestination($surfCamp->getGuidePratiqueDestination());
+        $dsurfCamp->setTexteInfo($surfCamp->getTexteInfo());
+        $dsurfCamp->setGoogleMap($surfCamp->getGoogleMap());
+        $dsurfCamp->setTarif($surfCamp->getTarif());
+        $dsurfCamp->setHorsSaisonText($surfCamp->getHorsSaisonText());
+        $dsurfCamp->setSaisonText($surfCamp->getSaisonText());
+        $dsurfCamp->setLocale($surfCamp->getLocale());
+
+        $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($dsurfCamp);
+            $entityManager->flush();
+
+        return $this->redirectToRoute('surf_camp_index');
+    }
 }

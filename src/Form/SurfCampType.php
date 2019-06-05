@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class SurfCampType extends AbstractType
 {
@@ -34,6 +35,15 @@ class SurfCampType extends AbstractType
             ->add('tarif')
             ->add('horsSaisonText', CKEditorType::class)
             ->add('saisonText', CKEditorType::class)
+            ->add('locale', ChoiceType::class, [
+                'choices' => [
+                    'Langue' => [
+                        'Français' => 'fr',
+                        'Anglais' => 'en',
+                    ],],
+                    'multiple' => false,
+                    'expanded' => true,
+            ])
         ;
     }
 
