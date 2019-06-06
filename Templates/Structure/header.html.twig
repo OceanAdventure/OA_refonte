@@ -23,6 +23,10 @@
                             {% for surf_camp in surf_camps if surf_camp.locale == 'fr' %}
                                 <a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}">{{ surf_camp.destination | raw }}</a>
                             {% endfor %}
+                            {% else %}
+                            {% for surf_camp in surf_camps if surf_camp.locale == 'en' %}
+                                <a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}">{{ surf_camp.destination | raw }}</a>
+                            {% endfor %}
                             {% endif %}
                         </div>
                     </li>

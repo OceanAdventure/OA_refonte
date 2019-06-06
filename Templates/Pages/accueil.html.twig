@@ -20,7 +20,27 @@
 			<div class="col-md-12" style="background-color: #dfe9e7; background-position:top; background-position:20% 20%; padding:10px; overflow:auto;" >
 				<center><h3><b>Quel destination pour votre Surf Camp ?</b></h3><br>
 				<div class="col-md-8">
-				<p style="border-radius: 10px; border-color:black;">Barre de recherche</p>
+					<p style="border-radius: 10px; border-color:black;">Barre de recherche</p>
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLongTitle"><img src="{{ asset('images/Ocean-Adventure-logo-small.png') }}" alt=""/></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<h2>Choisir une langue :</h2>
+								<a class="button" onclick="langueFr()" id="fr" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr' })) }}"><img src="{{ asset('images/france-flag-3d-icon-16.png') }}" alt="" style="position: right;"/>&nbsp;Français</a>
+                                <a class="button" onclick="langueEn()" id="en" href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en' })) }}"><img src="{{ asset('images/united-kingdom-flag-3d-icon-16.png') }}" style="padding-left: 8%;" alt=""/>&nbsp;Anglais</a>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+							</div>
+							</div>
+						</div>
+					</div>
 				</div></center>
 			</div>
 			<div class="col-md-8" style="padding-left: 0px;">
@@ -64,14 +84,21 @@
 					</font></center>
 				</div>
 			</div>
-
 			<div class="col-md-6">
 				<div class="container-fluid">
-					{% for surf_camp in surf_camps %}
-						<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
-						<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
-						</a></center><br>
-					{% endfor %}
+					{% if app.request.locale == 'fr' %}
+                        {% for surf_camp in surf_camps if surf_camp.locale == 'fr' %}
+								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
+									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+								</a></center><br>
+                        {% endfor %}
+                        {% else %}
+                        {% for surf_camp in surf_camps if surf_camp.locale == 'en' %}
+								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
+									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+								</a></center><br>
+                        {% endfor %}
+                    {% endif %}
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -85,11 +112,19 @@
 			</div>
 			<div class="col-md-6">
 				<div class="container-fluid">
-					{% for surf_camp in surf_camps %}
-						<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
-						<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
-						</a></center><br>
-					{% endfor %}
+					{% if app.request.locale == 'fr' %}
+                        {% for surf_camp in surf_camps if surf_camp.locale == 'fr' %} 
+								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
+									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+								</a></center><br>
+                        {% endfor %}
+                        {% else %}
+                        {% for surf_camp in surf_camps if surf_camp.locale == 'en' %}
+								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
+									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+								</a></center><br>
+                        {% endfor %}
+                    {% endif %}
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -180,4 +215,40 @@
 		</div>
 	</div>
 {# </main> #}
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#myModal').modal('show');
+    });
+
+	$('#fr').click(function() {
+    	document.getElementById("fr").href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'fr' })) }}";
+		$('#myModal').modal('hide');
+	});
+
+	('#en').click(function() {
+    	document.getElementById("en").href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'en' })) }}";
+		$('#myModal').modal('hide');
+	});
+	
+	function termsUse() {
+		var el = document.getElementById( 'myModal' );
+		if ( el ) {
+			var cmd = el.querySelectorAll( 'button' )[0];
+			el.style.display = 'block'; // @note Par défaut l'élément est caché afin d'éviter un visuel désagréable au chargement de la page
+			cmd.onclick = function(){
+				localStorage.setItem( 'termsuse', 'true' );
+				el.style.display = 'none';
+			};
+			if (localStorage.getItem( 'termsuse' ) === 'true' ) {
+				el.style.display = 'none';
+			}
+			//localStorage.removeItem( 'termsuse' ); // Réinitialisation de la valeur pour les tests, la clef peut aussi s'effacer directement via l'outil d'inspection
+		}
+	}
+
+	termsUse();
+
+</script>
 {% endblock %}
