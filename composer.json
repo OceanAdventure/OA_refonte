@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "friendsofsymfony/ckeditor-bundle": "^2.1",
+        "knplabs/doctrine-behaviors": "^1.6",
         "sensio/framework-extra-bundle": "^5.3",
         "swiftmailer/swiftmailer": "^6.0",
         "symfony/apache-pack": "^1.0",
