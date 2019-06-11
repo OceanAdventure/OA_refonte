@@ -27,6 +27,16 @@ class Activite
     private $description;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $titreEn;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $descriptionEn;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $image;
@@ -68,6 +78,30 @@ class Activite
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getTitreEn(): ?string
+    {
+        return $this->titreEn;
+    }
+
+    public function setTitreEn(string $titreEn): self
+    {
+        $this->titreEn = $titreEn;
+
+        return $this;
+    }
+
+    public function getDescriptionEn(): ?string
+    {
+        return $this->descriptionEn;
+    }
+
+    public function setDescriptionEn(string $descriptionEn): self
+    {
+        $this->descriptionEn = $descriptionEn;
 
         return $this;
     }

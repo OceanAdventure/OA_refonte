@@ -20,6 +20,11 @@ class SurfCampFuert
      * @ORM\Column(type="string", length=255)
      */
     private $grandTitre;
+    
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $grandTitreEn;
 
     /**
      * @ORM\Column(type="text")
@@ -29,7 +34,17 @@ class SurfCampFuert
     /**
      * @ORM\Column(type="text")
      */
+    private $titreAccrocheEn;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $paragraphe1;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $paragraphe1En;
 
     
 
@@ -50,6 +65,18 @@ class SurfCampFuert
         return $this;
     }
 
+    public function getGrandTitreEn(): ?string
+    {
+        return $this->grandTitreEn;
+    }
+
+    public function setGrandTitreEn(string $grandTitreEn): self
+    {
+        $this->grandTitreEn = $grandTitreEn;
+
+        return $this;
+    }
+
     public function getTitreAccroche(): ?string
     {
         return $this->titreAccroche;
@@ -62,6 +89,18 @@ class SurfCampFuert
         return $this;
     }
 
+    public function getTitreAccrocheEn(): ?string
+    {
+        return $this->titreAccrocheEn;
+    }
+
+    public function setTitreAccrocheEn(string $titreAccrocheEn): self
+    {
+        $this->titreAccrocheEn = $titreAccrocheEn;
+
+        return $this;
+    }
+
     public function getParagraphe1(): ?string
     {
         return $this->paragraphe1;
@@ -70,6 +109,18 @@ class SurfCampFuert
     public function setParagraphe1(string $paragraphe1): self
     {
         $this->paragraphe1 = $paragraphe1;
+
+        return $this;
+    }
+
+    public function getParagraphe1En(): ?string
+    {
+        return $this->paragraphe1En;
+    }
+
+    public function setParagraphe1En(string $paragraphe1En): self
+    {
+        $this->paragraphe1En = $paragraphe1En;
 
         return $this;
     }

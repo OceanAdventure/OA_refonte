@@ -29,7 +29,17 @@ class SurfCamp
     /**
      * @ORM\Column(type="text")
      */
+    private $titre1En;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $miniDescription;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $miniDescriptionEn;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -54,7 +64,17 @@ class SurfCamp
     /**
      * @ORM\Column(type="text")
      */
+    private $sstitre2En;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $sstext2;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $sstext2En;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -69,7 +89,17 @@ class SurfCamp
     /**
      * @ORM\Column(type="text")
      */
+    private $sstitre3En;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $sstext3;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $sstext3En;
 
     /**
      * @ORM\Column(type="text")
@@ -82,6 +112,11 @@ class SurfCamp
     private $prestation;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $prestationEn;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $enumeration;
@@ -89,12 +124,27 @@ class SurfCamp
     /**
      * @ORM\Column(type="text")
      */
+    private $enumerationEn;
+
+    /**
+     * @ORM\Column(type="text")
+     */
     private $guidePratiqueDestination;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $guidePratiqueDestinationEn;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $texteInfo;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $texteInfoEn;
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -114,12 +164,17 @@ class SurfCamp
     /**
      * @ORM\Column(type="text", nullable=true)
      */
+    private $horsSaisonTextEn;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
     private $saisonText;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $locale;
+    private $saisonTextEn;
 
     public function getId(): ?int
     {
@@ -150,6 +205,18 @@ class SurfCamp
         return $this;
     }
 
+    public function getTitre1En(): ?string
+    {
+        return $this->titre1En;
+    }
+
+    public function setTitre1En(string $titre1En): self
+    {
+        $this->titre1En = $titre1En;
+
+        return $this;
+    }
+
     public function getMiniDescription(): ?string
     {
         return $this->miniDescription;
@@ -158,6 +225,18 @@ class SurfCamp
     public function setMiniDescription(string $miniDescription): self
     {
         $this->miniDescription = $miniDescription;
+
+        return $this;
+    }
+
+    public function getMiniDescriptionEn(): ?string
+    {
+        return $this->miniDescriptionEn;
+    }
+
+    public function setMiniDescriptionEn(string $miniDescriptionEn): self
+    {
+        $this->miniDescriptionEn = $miniDescriptionEn;
 
         return $this;
     }
@@ -210,6 +289,18 @@ class SurfCamp
         return $this;
     }
 
+    public function getSstitre2En(): ?string
+    {
+        return $this->sstitre2En;
+    }
+
+    public function setSstitre2En(string $sstitre2En): self
+    {
+        $this->sstitre2En = $sstitre2En;
+
+        return $this;
+    }
+
     public function getSstext2(): ?string
     {
         return $this->sstext2;
@@ -218,6 +309,18 @@ class SurfCamp
     public function setSstext2(string $sstext2): self
     {
         $this->sstext2 = $sstext2;
+
+        return $this;
+    }
+
+    public function getSstext2En(): ?string
+    {
+        return $this->sstext2En;
+    }
+
+    public function setSstext2En(string $sstext2En): self
+    {
+        $this->sstext2En = $sstext2En;
 
         return $this;
     }
@@ -246,6 +349,18 @@ class SurfCamp
         return $this;
     }
 
+    public function getSstitre3En(): ?string
+    {
+        return $this->sstitre3En;
+    }
+
+    public function setSstitre3En(string $sstitre3En): self
+    {
+        $this->sstitre3En = $sstitre3En;
+
+        return $this;
+    }
+
     public function getSstext3(): ?string
     {
         return $this->sstext3;
@@ -254,6 +369,18 @@ class SurfCamp
     public function setSstext3(string $sstext3): self
     {
         $this->sstext3 = $sstext3;
+
+        return $this;
+    }
+
+    public function getSstext3En(): ?string
+    {
+        return $this->sstext3En;
+    }
+
+    public function setSstext3En(string $sstext3En): self
+    {
+        $this->sstext3En = $sstext3En;
 
         return $this;
     }
@@ -282,6 +409,18 @@ class SurfCamp
         return $this;
     }
 
+    public function getPrestationEn(): ?string
+    {
+        return $this->prestationEn;
+    }
+
+    public function setPrestationEn(?string $prestationEn): self
+    {
+        $this->prestationEn = $prestationEn;
+
+        return $this;
+    }
+
     public function getEnumeration(): ?string
     {
         return $this->enumeration;
@@ -290,6 +429,18 @@ class SurfCamp
     public function setEnumeration(?string $enumeration): self
     {
         $this->enumeration = $enumeration;
+
+        return $this;
+    }
+
+    public function getEnumerationEn(): ?string
+    {
+        return $this->enumerationEn;
+    }
+
+    public function setEnumerationEn(?string $enumerationEn): self
+    {
+        $this->enumerationEn = $enumerationEn;
 
         return $this;
     }
@@ -306,6 +457,18 @@ class SurfCamp
         return $this;
     }
 
+    public function getGuidePratiqueDestinationEn(): ?string
+    {
+        return $this->guidePratiqueDestinationEn;
+    }
+
+    public function setGuidePratiqueDestinationEn(string $guidePratiqueDestinationEn): self
+    {
+        $this->guidePratiqueDestinationEn = $guidePratiqueDestinationEn;
+
+        return $this;
+    }
+
     public function getTexteInfo(): ?string
     {
         return $this->texteInfo;
@@ -314,6 +477,18 @@ class SurfCamp
     public function setTexteInfo(?string $texteInfo): self
     {
         $this->texteInfo = $texteInfo;
+
+        return $this;
+    }
+
+    public function getTexteInfoEn(): ?string
+    {
+        return $this->texteInfoEn;
+    }
+
+    public function setTexteInfoEn(?string $texteInfoEn): self
+    {
+        $this->texteInfoEn = $texteInfoEn;
 
         return $this;
     }
@@ -354,6 +529,18 @@ class SurfCamp
         return $this;
     }
 
+    public function getHorsSaisonTextEn(): ?string
+    {
+        return $this->horsSaisonTextEn;
+    }
+
+    public function setHorsSaisonTextEn(?string $horsSaisonTextEn): self
+    {
+        $this->horsSaisonTextEn = $horsSaisonTextEn;
+
+        return $this;
+    }
+
     public function getSaisonText(): ?string
     {
         return $this->saisonText;
@@ -366,15 +553,16 @@ class SurfCamp
         return $this;
     }
 
-    public function getLocale(): ?string
+    public function getSaisonTextEn(): ?string
     {
-        return $this->locale;
+        return $this->saisonTextEn;
     }
 
-    public function setLocale(string $locale): self
+    public function setSaisonTextEn(?string $saisonTextEn): self
     {
-        $this->locale = $locale;
+        $this->saisonTextEn = $saisonTextEn;
 
         return $this;
     }
+
 }

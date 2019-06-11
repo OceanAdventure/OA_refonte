@@ -8,14 +8,18 @@
         </div>
 {% endblock %}
 {% block body %}
+{% if app.request.locale == "fr" %}
 <main role="main" class="container"><br><br>
 
     {{ activite.titre | raw }}
     {{ activite.description | raw }}
     <img alt="" src="{{ asset('upload/'~activite.image~'') }}" class="img-thumbnail" width="100%" height="20%" />
             
-        </tbody>
-    </table>
+{% else %}
+    {{ activite.titreEn | raw }}
+    {{ activite.descriptionEn | raw }}
+    <img alt="" src="{{ asset('upload/'~activite.image~'') }}" class="img-thumbnail" width="100%" height="20%" />
+{% endif %}
     {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('activite_index') }}">Retour à la liste</a>
 

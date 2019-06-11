@@ -16,8 +16,11 @@ class SurfCampFuertType extends AbstractType
     {
         $builder
             ->add('grandTitre')
+            ->add('grandTitreEn')
             ->add('titreAccroche', CKEditorType::class)
+            ->add('titreAccrocheEn', CKEditorType::class)
             ->add('paragraphe1', CKEditorType::class)
+            ->add('paragraphe1En', CKEditorType::class)
         ;
     }
 

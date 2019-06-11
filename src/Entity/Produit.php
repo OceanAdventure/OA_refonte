@@ -29,12 +29,27 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $titre_principalEn;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $titre_secondaire;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $titre_secondaireEn;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $condition_reglement;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $condition_reglementEn;
 
     /**
      * @ORM\Column(type="integer")
@@ -50,6 +65,11 @@ class Produit
      * @ORM\Column(type="string", length=500)
      */
     private $descrition;
+
+    /**
+     * @ORM\Column(type="string", length=500)
+     */
+    private $descritionEn;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -95,6 +115,18 @@ class Produit
         return $this;
     }
 
+    public function getTitrePrincipalEn(): ?string
+    {
+        return $this->titre_principalEn;
+    }
+
+    public function setTitrePrincipalEn(string $titre_principalEn): self
+    {
+        $this->titre_principalEn = $titre_principalEn;
+
+        return $this;
+    }
+
     public function getTitreSecondaire(): ?string
     {
         return $this->titre_secondaire;
@@ -107,6 +139,18 @@ class Produit
         return $this;
     }
 
+    public function getTitreSecondaireEn(): ?string
+    {
+        return $this->titre_secondaireEn;
+    }
+
+    public function setTitreSecondaireEn(string $titre_secondaireEn): self
+    {
+        $this->titre_secondaireEn = $titre_secondaireEn;
+
+        return $this;
+    }
+
     public function getConditionReglement(): ?string
     {
         return $this->condition_reglement;
@@ -115,6 +159,18 @@ class Produit
     public function setConditionReglement(string $condition_reglement): self
     {
         $this->condition_reglement = $condition_reglement;
+
+        return $this;
+    }
+
+    public function getConditionReglementEn(): ?string
+    {
+        return $this->condition_reglementEn;
+    }
+
+    public function setConditionReglementEn(string $condition_reglementEn): self
+    {
+        $this->condition_reglementEn = $condition_reglementEn;
 
         return $this;
     }
@@ -151,6 +207,18 @@ class Produit
     public function setDescrition(string $descrition): self
     {
         $this->descrition = $descrition;
+
+        return $this;
+    }
+
+    public function getDescritionEn(): ?string
+    {
+        return $this->descritionEn;
+    }
+
+    public function setDescritionEn(string $descritionEn): self
+    {
+        $this->descritionEn = $descritionEn;
 
         return $this;
     }

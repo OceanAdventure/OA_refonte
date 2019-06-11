@@ -15,11 +15,15 @@ class HebergementType extends AbstractType
     {
         $builder
             ->add('grandTitre', CKEditorType::class)
+            ->add('grandTitreEn', CKEditorType::class)
             ->add('situation')
             ->add('descriptionSsTitre', CKEditorType::class)
+            ->add('descriptionSsTitreEn', CKEditorType::class)
             ->add('image1', FileType::class, ['data_class' => null])
             ->add('typeDeChambre', CKEditorType::class)
+            ->add('typeDeChambreEn', CKEditorType::class)
             ->add('ssText', CKEditorType::class)
+            ->add('ssTextEn', CKEditorType::class)
             ->add('galerie', CKEditorType::class)
         ;
     }

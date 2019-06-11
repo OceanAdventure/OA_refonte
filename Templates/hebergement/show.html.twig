@@ -7,6 +7,8 @@
         </div>
 {% endblock %}
 {% block body %}
+
+{% if app.request.locale == "fr" %}
 <main role="main" class="container"><br><br>
     <div class="container-fluid">
         <div class="row">
@@ -28,6 +30,29 @@
             </div>
         </div>
     </div>
+{% else %}
+<main role="main" class="container"><br><br>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-center">
+                    {{ hebergement.grandTitreEn | raw }}
+                </h3><br>
+                <p class="text-center text-muted">
+                   {{ hebergement.descriptionSsTitreEn | raw }}
+                </p>
+                <center><img alt="" src="{{ asset('upload/'~hebergement.image1~'') }}" class="img-thumbnail" width="100%" height="20%" /></center>
+                <br><h3 class="text-center">
+                    {{ hebergement.typeDeChambreEn | raw }}
+                </h3>
+                <p class="text-center text-muted">
+                    {{ hebergement.ssTextEn | raw }}
+                </p>
+                <center>{{ hebergement.galerie | raw }}</center>
+            </div>
+        </div>
+    </div>
+{% endif %}
     {% if is_granted('ROLE_ADMIN') %}
     <a href="{{ path('hebergement_index') }}">Retour à la liste</a>
     <a href="{{ path('hebergement_edit', {'id': hebergement.id}) }}">Editer </a>

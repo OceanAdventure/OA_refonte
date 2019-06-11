@@ -86,19 +86,11 @@
 			</div>
 			<div class="col-md-6">
 				<div class="container-fluid">
-					{% if app.request.locale == 'fr' %}
-                        {% for surf_camp in surf_camps if surf_camp.locale == 'fr' %}
+                        {% for surf_camp in surf_camps %}
 								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
 									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
 								</a></center><br>
                         {% endfor %}
-                        {% else %}
-                        {% for surf_camp in surf_camps if surf_camp.locale == 'en' %}
-								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
-									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
-								</a></center><br>
-                        {% endfor %}
-                    {% endif %}
 				</div>
 			</div>
 			<div class="col-md-12">
@@ -112,19 +104,12 @@
 			</div>
 			<div class="col-md-6">
 				<div class="container-fluid">
-					{% if app.request.locale == 'fr' %}
-                        {% for surf_camp in surf_camps if surf_camp.locale == 'fr' %} 
+					{# {% if app.request.locale == 'fr' %} #}
+                        {% for surf_camp in surf_camps %} 
 								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
 									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
 								</a></center><br>
                         {% endfor %}
-                        {% else %}
-                        {% for surf_camp in surf_camps if surf_camp.locale == 'en' %}
-								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
-									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
-								</a></center><br>
-                        {% endfor %}
-                    {% endif %}
 				</div>
 			</div>
 			<div class="col-md-6">

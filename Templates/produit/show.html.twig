@@ -3,6 +3,7 @@
 {% block title %}{{ produit.titrePrincipal }}{% endblock %}
 
 {% block body %}
+{% if app.request.locale == "fr" %}
 <main role="main" class="container">
     
 	<div class="col-md-12">	
@@ -19,7 +20,7 @@
 
                 <div class="col-md-5">
                     <h2><b>
-                        {{ produit.titrePrincipal|trans }}
+                        {{ produit.titrePrincipal }}
                     </b></h2>
                     <hr width="25%" color="grey" align="left">
                     {{ produit.prix }}<a>€</a><br>
@@ -43,6 +44,48 @@
                 </div>
             </div>
         </div>
+{% else %}
+<main role="main" class="container">
+    
+	<div class="col-md-12">	
+        <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="auto" style="margin: 0px; padding: 0px;"/>
+	</div>	
+	<br><br>
+        <div style="margin-left:10%;" class="container-fluid">
+            <div class="row">
+                <div class="col-md-5">
+                    <br>
+                    {# https://maryamdev.blogspot.com/2017/10/tuto-symfony-3-upload-dune-image-en.html #}
+                    <div class="container"><img src="{{ asset('images/'~produit.image~'.png') }}" alt=""/></div><br>               
+                </div>
+
+                <div class="col-md-5">
+                    <h2><b>
+                        {{ produit.titrePrincipalEn }}
+                    </b></h2>
+                    <hr width="25%" color="grey" align="left">
+                    {{ produit.prix }}<a>€</a><br>
+                    <br>{{ produit.conditionReglementEn }}
+                    <div>
+                    <br><form>
+                        <input id="moins" type="button" class="btn-sm" value="-"/>
+                        <input id ="result" type="texte" value="1" maxlength="2" style="width:10%; text-align:center;"/>
+                        <input id="plus" type="button" class="btn-sm" value="+"/>
+                        &nbsp;&nbsp;<button href="#" class="btn btn-primary">Ajouter au panier</button>
+                    </form>
+                    </div>
+                    <br>
+                    <div class="container">
+                         <div class="c1" onclick="pchild=this.getElementsByTagName('p'); if(pchild[0].style.visibility!='hidden'){pchild[0].style.visibility='hidden'; pchild[0].style.height='0';}else{pchild[0].style.visibility=''; pchild[0].style.height=''}">Description
+                            <p style="border:1px dotted black;">
+                                {{ produit.descritionEn }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endif %}
 
     <br>&nbsp;<a class="btn btn-outline-secondary btn-sm" href="{{ path('produit_index') }}">Retour à la liste</a>
     &nbsp;&nbsp;<a class="btn btn-outline-warning btn-sm" href="{{ path('produit_edit', {'id': produit.id}) }}">Editer</a>
