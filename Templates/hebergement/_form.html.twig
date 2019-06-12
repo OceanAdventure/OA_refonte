@@ -1,4 +1,56 @@
 {{ form_start(form) }}
+    <p>situation :</p>
+    {{ form_widget(form.situation) }}<br>
+    <p>Grand titre (Fr) :</p>
+    {{ form_widget(form.grandTitre) }}<br>
+    <input type="button" id="btn1" value="+ Ajouter Grand titre (En)" onclick="masquer_div('a_masquer1');" /><br>
+    <div id="a_masquer1" style="display: none;">
+        <p>Grand titre (En) :</p>
+        {{ form_widget(form.grandTitreEn) }}<br>
+    </div>
+    <br>
+    <p>Description sous-titre (Fr) :</p>
+    {{ form_widget(form.descriptionSsTitre) }}<br>
+    <input type="button" id="btn2" value="+ Ajouter Description sous-titre (En)" onclick="masquer_div('a_masquer2');" /><br>
+    <div id="a_masquer2" style="display: none;">
+        <p>Description sous-titre (En) :</p>
+        {{ form_widget(form.descriptionSsTitreEn) }}<br>
+    </div>
+    <br>
+    <p>image1 :</p>
+    {{ form_widget(form.image1) }}<br>
+    <p>Type de chambre (Fr) :</p>
+    {{ form_widget(form.typeDeChambre) }}<br>
+    <input type="button" id="btn3" value="+ Ajouter Type de chambre (En)" onclick="masquer_div('a_masquer3');" /><br>
+    <div id="a_masquer3" style="display: none;">
+        <p>Type de chambre (En) :</p>
+        {{ form_widget(form.typeDeChambreEn) }}<br>
+    </div>
+    <br>
+    <p>Sous-text (Fr) :</p>
+    {{ form_widget(form.ssText) }}<br>
+    <input type="button" id="btn4" value="+ Ajouter Sous-text (En)" onclick="masquer_div('a_masquer4');" /><br>
+    <div id="a_masquer4" style="display: none;">
+        <p>Sous-text (En) :</p>
+        {{ form_widget(form.ssTextEn) }}<br>
+    </div>
+    <br>
+    <p>Galerie :</p>
+    {{ form_widget(form.galerie) }}<br>
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+
+<script>
+function masquer_div(id)
+{
+  if (document.getElementById(id).style.display == 'block')
+  {
+       document.getElementById(id).style.display = 'none';
+  }
+  else 
+  {
+       document.getElementById(id).style.display = 'block';
+  }
+}
+</script>

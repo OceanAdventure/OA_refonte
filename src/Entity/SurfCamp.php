@@ -27,7 +27,7 @@ class SurfCamp
     private $titre1;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $titre1En;
 
@@ -37,7 +37,7 @@ class SurfCamp
     private $miniDescription;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $miniDescriptionEn;
 
@@ -62,7 +62,7 @@ class SurfCamp
     private $sstitre2;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $sstitre2En;
 
@@ -72,7 +72,7 @@ class SurfCamp
     private $sstext2;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $sstext2En;
 
@@ -87,7 +87,7 @@ class SurfCamp
     private $sstitre3;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $sstitre3En;
 
@@ -97,7 +97,7 @@ class SurfCamp
     private $sstext3;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $sstext3En;
 
@@ -122,7 +122,7 @@ class SurfCamp
     private $enumeration;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $enumerationEn;
 
@@ -132,7 +132,7 @@ class SurfCamp
     private $guidePratiqueDestination;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $guidePratiqueDestinationEn;
 

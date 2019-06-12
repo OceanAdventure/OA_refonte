@@ -1,4 +1,42 @@
 {{ form_start(form) }}
+    <p>Grand Titre (Fr) :</p>
+    {{ form_widget(form.grandTitre) }}<br>
+    <input type="button" id="btn1" value="+ Ajouter Grand Titre (En)" onclick="masquer_div('a_masquer1');" /><br>
+    <div id="a_masquer1" style="display: none;">
+        <p>Grand Titre (En) :</p>
+        {{ form_widget(form.grandTitreEn) }}<br>
+    </div>
+    <br>
+    <p>Titre accroche (Fr) :</p>
+    {{ form_widget(form.titreAccroche) }}<br>
+    <input type="button" id="btn2" value="+ Ajouter Titre accroche (En)" onclick="masquer_div('a_masquer2');" /><br>
+    <div id="a_masquer2" style="display: none;">
+    <p>Titre accroche (En) :</p>
+    {{ form_widget(form.titreAccrocheEn) }}<br>
+    </div>
+    <br>
+    <p>Paragraphe (Fr) :</p>
+    {{ form_widget(form.paragraphe1) }}<br>
+    <input type="button" id="btn3" value="+ Ajouter Paragraphe (En)" onclick="masquer_div('a_masquer3');" /><br>
+    <div id="a_masquer3" style="display: none;">
+    <p>Paragraphe (En) :</p>
+    {{ form_widget(form.paragraphe1En) }}<br>
+    </div>
+    <br>
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+
+<script>
+function masquer_div(id)
+{
+  if (document.getElementById(id).style.display == 'block')
+  {
+       document.getElementById(id).style.display = 'none';
+  }
+  else 
+  {
+       document.getElementById(id).style.display = 'block';
+  }
+}
+</script>

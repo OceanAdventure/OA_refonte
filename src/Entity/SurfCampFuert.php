@@ -22,7 +22,7 @@ class SurfCampFuert
     private $grandTitre;
     
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $grandTitreEn;
 
@@ -32,7 +32,7 @@ class SurfCampFuert
     private $titreAccroche;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $titreAccrocheEn;
 
@@ -42,7 +42,7 @@ class SurfCampFuert
     private $paragraphe1;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $paragraphe1En;
 

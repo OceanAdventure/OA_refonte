@@ -22,7 +22,7 @@ class Hebergement
     private $grandTitre;
     
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $grandTitreEn;
 
@@ -37,7 +37,7 @@ class Hebergement
     private $descriptionSsTitre;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $descriptionSsTitreEn;
 
@@ -52,7 +52,7 @@ class Hebergement
     private $ssText;
     
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $ssTextEn;
 
@@ -62,7 +62,7 @@ class Hebergement
     private $typeDeChambre;
     
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $typeDeChambreEn;
 
