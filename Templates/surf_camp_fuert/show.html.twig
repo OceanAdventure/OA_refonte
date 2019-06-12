@@ -25,9 +25,27 @@
             </div>
             <div class="col-md-6">
             <h1><center>Surfcamp</center></h1>
+            {% for surf_camp in surf_camps %}
+                {% if surf_camp.destination == "Fuerteventura Corralejo" %}
+                    <center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
+						<p style="position: align;">{{ surf_camp.miniDescription | raw  }}</p>
+                        <img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+					</a></center><br>
+                {% endif %}
+            {% endfor %}
             </div>
         </div><br>
 
+        <div class="row">
+                {% for hebergement in hebergements %}
+                <div class="col-md-4">
+                        <a class="dropdown-item" href="{{ path('hebergement_show', {'id': hebergement.id}) }}"><h2 style="color: #540f5b;"><b>{{ hebergement.grandTitre | raw }}</b></h2><br>
+                            <center><p style="">{{ hebergement.descriptionSsTitre | raw  }}</p></center><br>
+                            <img alt="" src="{{ asset('upload/'~hebergement.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+                        </a><br>
+                 </div>
+                {% endfor %}
+        </div><br>
 
         {# Cours #}
         <font size="+4"><center>Activités Fuerteventura, Corralejo</center></font>

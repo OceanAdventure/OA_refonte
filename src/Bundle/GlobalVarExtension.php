@@ -4,6 +4,7 @@ namespace App\Bundle;
 
 use App\Entity\SurfCamp;
 use App\Entity\SurfCampFuert;
+use App\Entity\Hebergement;
 
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -25,6 +26,7 @@ class GlobalVarExtension extends \Twig\Extension\AbstractExtension implements \T
         return [
             'surf_camps' => $this->em->getRepository(SurfCamp::class)->findAll(),
             'surf_camp_fuerts' => $this->em->getRepository(SurfCampFuert::class)->findAll(),
+            'hebergements' => $this->em->getRepository(Hebergement::class)->findAll(),
         ];
     }
 }

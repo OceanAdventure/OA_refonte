@@ -20,7 +20,9 @@
                             <a class="dropdown-item" href="{{ path('surf_camp_fuert_show', {'id': surf_camp_fuert.id}) }}">Fuerteventura</a>
                             {% endfor %}
                             {% for surf_camp in surf_camps %}
+                            {% if surf_camp.destination != "Fuerteventura Corralejo" %}
                                 <a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}">{{ surf_camp.destination | raw }}</a>
+                            {% endif %}
                             {% endfor %}
                         </div>
                     </li>

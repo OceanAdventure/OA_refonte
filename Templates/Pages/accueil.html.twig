@@ -19,8 +19,23 @@
 		<div class="row">
 			<div class="col-md-12" style="background-color: #dfe9e7; background-position:top; background-position:20% 20%; padding:10px; overflow:auto;" >
 				<center><h3><b>Quel destination pour votre Surf Camp ?</b></h3><br>
+    			{# <FORM>
+    				<datalist id="languages">
+						{% for surf_camp in surf_camps %}
+							<OPTION>{{ surf_camp.destination | raw }}
+						{% endfor %}
+    					{% for surf_camp_fuert in surf_camp_fuerts %}
+							<OPTION>{{ surf_camp_fuert.grandTitre | raw }}
+						{% endfor %}
+    				</datalist>
+    			</FORM> #}
+				<form autocomplete="off">
+					<div class="autocomplete" style="width:300px;">
+    					<input id="myInput" type="text" name="myCountry" placeholder="Country">
+  					</div>
+  					<input type="submit" value="Rechercher">
+				</form><br>
 				<div class="col-md-8">
-					<p style="border-radius: 10px; border-color:black;">Barre de recherche</p>
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-content">
@@ -56,7 +71,7 @@
 					<center><p style="color: #d8badb"><b>Vous rêvez d'un séjour détente et sport ?</b></p></center>
 					<br>
 					<center><p style="color: #616161">Il n'existe pas de plus grand plaisir que de surfer et<br>chiller sur la plage en attendant de surfer encore !</p></center><br><br>
-					<center><a type="button" class="btn btn-info" href="{{ path('presentation_surfcamps') }}">Voir nos surf camps</a></center><br>
+					<center><a type="button" class="btn btn-info" href="https://oceanadventure.surf/surf-camps-2/">Voir nos surf camps</a></center><br>
 				</div>
 			</div>
 			<div>
@@ -84,36 +99,37 @@
 					</font></center>
 				</div>
 			</div>
-			<div class="col-md-6">
-				<div class="container-fluid">
-                        {% for surf_camp in surf_camps %}
-								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
-									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
-								</a></center><br>
-                        {% endfor %}
-				</div>
-			</div>
-			<div class="col-md-12">
-				<div class="container-fluid">
+                {% for surf_camp in surf_camps %}
+					{% if surf_camp.destination != "Fuerteventura Corralejo" %}
+					<div class="col-md-6">
+						<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
+							<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+						</a></center><br>
+					</div>
+					{% endif %}
+                {% endfor %}
+			
 					{% for surf_camp_fuert in surf_camp_fuerts %}
+					<div class="col-md-12">
 						<center><a class="dropdown-item" href="{{ path('surf_camp_fuert_show', {'id': surf_camp_fuert.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp_fuert.grandTitre | raw }}</b></h2><br>
 						<img alt="" src="{{ asset('images/SCF.jpg') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
 						</a></center><br><br>
+					</div>
 					{% endfor %}
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="container-fluid">
-					{# {% if app.request.locale == 'fr' %} #}
-                        {% for surf_camp in surf_camps %} 
+			
+                        {% for surf_camp in surf_camps %}
+						{% if (surf_camp.destination != "Fuerteventura Corralejo") and (surf_camp.id != 1) %} 
+						<div class="col-md-6">
 								<center><a class="dropdown-item" href="{{ path('surf_camp_show', {'id': surf_camp.id}) }}"><h2 style="color: #540f5b;"><b>{{ surf_camp.destination | raw }}</b></h2><br>
 									<img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
 								</a></center><br>
+						</div>
+						{% endif %}
                         {% endfor %}
-				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-12">
 			</div>
+			<div class="row">
 			<div class="col-md-4">
 				<div class="container-fluid">
 					<center><img src="{{ asset('images/home_surfing.png') }}" alt="" width="20%"/></center><br>
@@ -123,13 +139,14 @@
 					<br>
 					<h4 style="color: #64066d">Adulte et Adolescents</h4>
 					<p style="color: #616161">Un surf camp c'est un stage de surf avec hébergement avec tout inclus pour les adolescents, ou avec seulement le stage de surf (cours + transport) et l'hébergement pour les adultes</p><br>
-					<a type="button" class="btn btn-info" href="">Formules du Surf Camp</a></center><br>
+					<a type="button" class="btn btn-info" href="https://oceanadventure.surf/formules-surf-camp/">Formules du Surf Camp</a></center><br>
 				</div>
 			</div>
 			<div class="col-md-8" >
 				<div class="container-fluid">
 					<img alt="" src="{{ asset('images/planches.jpg') }}" width="100%" height="100%" style="margin: 0px; padding: 0px;" />
 				</div>
+			</div>
 			</div>
 			<div class="col-md-12" style="background-image: url(images/bgHome.jpg); background-position:left top; background-position: 20% 20%; padding:10px; background-size: cover;">
 				<div class="container-fluid" style="margin-left: 5%;">
@@ -181,7 +198,7 @@
 			</div>
 			<div class="col-md-12" style="background-color: #38eee0;">
 				<br><br>
-				<h1 style="margin-left: 100px; color: #540f5b;">PASSE TES VACANCES AVEC NOUS&nbsp;&nbsp;&nbsp;<a type="button" style="color: #540f5b;" class="btn btn-light" href="">Je reserve !</a></h1><br>
+				<h1 style="margin-left: 100px; color: #540f5b;">PASSE TES VACANCES AVEC NOUS&nbsp;&nbsp;&nbsp;<a type="button" style="color: #540f5b;" class="btn btn-light" href="{{ path("contact") }}">Je reserve !</a></h1><br>
 				<br>
 			</div>
 			<div class="container-fluid">
@@ -235,5 +252,176 @@
 
 	termsUse();
 
+
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var countries = [
+	{% for surf_camp in surf_camps %}
+	"{{ surf_camp.destination | raw }}",
+	{% endfor %}
+	"Zimbabwe"];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("myInput"), countries);
+
 </script>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;  
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+</style>
 {% endblock %}

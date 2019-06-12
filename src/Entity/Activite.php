@@ -27,12 +27,12 @@ class Activite
     private $description;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $titreEn;
 
     /**
-     * @ORM\Column(type="text")
+     * @ORM\Column(type="text", nullable=true)
      */
     private $descriptionEn;
 
@@ -87,7 +87,7 @@ class Activite
         return $this->titreEn;
     }
 
-    public function setTitreEn(string $titreEn): self
+    public function setTitreEn(?string $titreEn): self
     {
         $this->titreEn = $titreEn;
 
@@ -99,7 +99,7 @@ class Activite
         return $this->descriptionEn;
     }
 
-    public function setDescriptionEn(string $descriptionEn): self
+    public function setDescriptionEn(?string $descriptionEn): self
     {
         $this->descriptionEn = $descriptionEn;
 
