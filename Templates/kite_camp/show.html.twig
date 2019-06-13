@@ -1,0 +1,285 @@
+{% extends 'structure/base.html.twig' %}
+
+{% block title %}{{ kite_camp.intitule | raw }}{% endblock %}
+{% block bandeau %}
+<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+    <div class="row">
+        <div class="col-md-12" style="background-image: url(images/imgConcept.png); background-position:top; padding-left: 0px;">
+            <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="100%" style="margin: 0px; padding: 0px; position: relative;"/>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block body %}
+    {% if app.request.locale == "fr" %}
+    <main role="main" class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                <h3>
+                    <center>{{ kite_camp.GrandTitre | raw }}</center>
+                </h3>
+                <p>
+                    {{ kite_camp.description | raw  }}
+                </p>
+                <img alt="" src="{{ asset('upload/'~kite_camp.image~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                <center>{{ kite_camp.galerie | raw }}</center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <center><img alt="" src="{{ asset('upload/'~kite_camp.image2~'') }}" width="85%" height="50%" style="margin: 30px; " /></center>
+                <h3 style="position: relative; overflow:hidden;">
+                    {{ kite_camp.ssTitre2 | raw }}
+                </h3>
+                <p>
+                    {{ kite_camp.ssText2 | raw }}
+                </p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <h3>
+                <br><img src="{{ asset('images/home_surfing.png') }}" alt="" width="25%" height="25%" style="margin: 0px; padding: 0px;"/>
+                <br><br>{{ kite_camp.ssTitre3 | raw }}
+                </h3>
+                {# <p>
+                    {{ kite_camp.ssText3 | raw }}
+                </p> #}
+                <center><img alt="" src="{{ asset('upload/'~kite_camp.image3~'') }}" width="85%" height="50%" style="margin: 30px; padding: 0px;" /></center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="background-color: #38eee0;">
+                <br><br>
+                    <h1 style="margin-left: 100px; color: #540f5b;">Un moniteur de Kite Surf pour 2 élèves* !&nbsp;&nbsp;&nbsp;<a type="button" style="color: #540f5b;" class="btn btn-light" href="{{ path("contact") }}">Je reserve !</a></h1><br>
+                <br>
+            </div>
+        </div>
+        <div class="row" style="padding: 3%;">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                {{ kite_camp.galerie2 | raw }}
+            </div>
+        </div>
+        <div class="row" style="padding: 3%;">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <h3>
+                    {{ kite_camp.textInfo | raw }}
+                </h3>
+                <p>
+                    {{ kite_camp.enumeration | raw }}
+                </p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <h3>
+                    {{ kite_camp.guidePratiqueDestination | raw }}
+                </h3>
+                <p>
+                    {{ kite_camp.text | raw }}
+                </p>
+                {{ kite_camp.googleMap | raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <p>{{ kite_camp.niveauText | raw }}</p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <p>{{ kite_camp.locationText | raw }}</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <h3><b>Séjour individuel</b></h3>
+                <img alt="" src="{{ asset('images/imgIndividuel.jpg') }}" width="100%" height="60%"/>
+                <br><p>Tu es seul et veut rejoindre le surf camp pour progresser et rencontrer d'autres personnes venues d'autres pays.</p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en couple</b></h3>
+                <img alt="" src="{{ asset('images/imgCouple.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous êtes en couple, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays tout en ayant votre intimité. </p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en groupe</b></h3>
+                <img alt="" src="{{ asset('images/imgGroupe.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous êtes un groupe d'amis, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays.</p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en famille</b></h3>
+                <img alt="" src="{{ asset('images/imgFamille.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous venez en famille, avec des nourissons ou enfants en bas âge. Pas de soucis, vous bénéficierez d'un service adapté : nourrice, cours de surf pour les kids, etc...</p>
+            </div>
+        </div><br>
+        <div style="background-color:#10476e; padding-left: 2%; padding-right: 2%; padding-bottom: 2%; padding-top: 2%; border-radius: 10px;" >
+            <div class="row">
+                <h2 style="color:white;"><b>&nbsp;Vis ton rêve, passe tes vacances avec nous !<br>&nbsp;Tarifs et Pré-réservation</b></h2>
+                <br><div class="col-md-12">
+                    {{ form_start(form_res) }}
+                        <div class="row">
+                            <div class="col" style="color:white;">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
+                            <div class="col" style="color:white;">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
+                        </div>
+                        <div style="color:white;">{{ form_row(form_res.niveau) }}</div>
+                        <div style="color:white;">{{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}</div>
+                        <div style="color:white;">{{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}</div>
+                        <div class="row">
+                            <div class="col" style="color:white;">{{ form_row(form_res.type_chambre) }}</div>
+                            <div class="col" style="color:white;">{{ form_row(form_res.type_activite) }}</div>
+                        </div>                        <div class="row">
+                            <div class="col" style="color:white;">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
+                            <div class="col" style="color:white;">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
+                        </div>
+                        <div style="color:white;">{{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}</div>
+                        <div style="color:white;">{{ 'user.message'|trans }}{{ form_row(form_res.message) }}</div>
+                        <button type="submit" class="btn" style="background-color:grey;">{{ 'user.envoye'|trans }}</button>
+                        {{ form_end(form_res) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    {% else %}
+    <main role="main" class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                <h3>
+                    <center>{{ kite_camp.GrandTitreEn | raw }}</center>
+                </h3>
+                <p>
+                    {{ kite_camp.descriptionEn | raw  }}
+                </p>
+                <img alt="" src="{{ asset('upload/'~kite_camp.image~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                <center>{{ kite_camp.galerie | raw }}</center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <center><img alt="" src="{{ asset('upload/'~kite_camp.image2~'') }}" width="100%" height="50%" style="margin: 30px; " /></center>
+                <h3 style="position: relative; overflow:hidden;">
+                    {{ kite_camp.ssTitre2En | raw }}
+                </h3>
+                <p>
+                    {{ kite_camp.ssText2En | raw }}
+                </p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <h3>
+                <br><img src="{{ asset('images/home_surfing.png') }}" alt="" width="25%" height="25%" style="margin: 0px; padding: 0px;"/>
+                <br><br>{{ kite_camp.ssTitre3En | raw }}
+                </h3>
+                {# <p>
+                    {{ kite_camp.ssText3 | raw }}
+                </p> #}
+                <center><img alt="" src="{{ asset('upload/'~kite_camp.image3~'') }}" width="100%" height="50%" style="margin: 30px; padding: 0px;" /></center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="background-color: #38eee0;">
+                <br><br>
+                    <h1 style="margin-left: 100px; color: #540f5b;">Un moniteur de Kite Surf pour 2 élèves* !&nbsp;&nbsp;&nbsp;<a type="button" style="color: #540f5b;" class="btn btn-light" href="{{ path("contact") }}">Je reserve !</a></h1><br>
+                <br>
+            </div>
+        </div>
+        <div class="row" style="padding: 3%;">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                {{ kite_camp.galerie2 | raw }}
+            </div>
+        </div>
+        <div class="row" style="padding: 3%;">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <h3>
+                    {{ kite_camp.textInfoEn | raw }}
+                </h3>
+                <p>
+                    {{ kite_camp.enumerationEn | raw }}
+                </p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <h3>
+                    {{ kite_camp.guidePratiqueDestinationEn | raw }}
+                </h3>
+                <p>
+                    {{ kite_camp.textEn | raw }}
+                </p>
+                {{ kite_camp.googleMap | raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <p>{{ kite_camp.niveauTextEn | raw }}</p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <p>{{ kite_camp.locationTextEn | raw }}</p>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-3">
+                <h3><b>Séjour individuel</b></h3>
+                <img alt="" src="{{ asset('images/imgIndividuel.jpg') }}" width="100%" height="60%"/>
+                <br><p>Tu es seul et veut rejoindre le surf camp pour progresser et rencontrer d'autres personnes venues d'autres pays.</p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en couple</b></h3>
+                <img alt="" src="{{ asset('images/imgCouple.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous êtes en couple, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays tout en ayant votre intimité. </p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en groupe</b></h3>
+                <img alt="" src="{{ asset('images/imgGroupe.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous êtes un groupe d'amis, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays.</p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en famille</b></h3>
+                <img alt="" src="{{ asset('images/imgFamille.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous venez en famille, avec des nourissons ou enfants en bas âge. Pas de soucis, vous bénéficierez d'un service adapté : nourrice, cours de surf pour les kids, etc...</p>
+            </div>
+        </div><br>
+        <div style="background-color:#10476e; padding-left: 2%; padding-right: 2%; padding-bottom: 2%; padding-top: 2%; border-radius: 10px;" >
+            <div class="row">
+                <h2 style="color:white;"><b>&nbsp;Vis ton rêve, passe tes vacances avec nous !<br>&nbsp;Tarifs et Pré-réservation</b></h2>
+                <br><div class="col-md-12">
+                    {{ form_start(form_res) }}
+                        <div class="row">
+                            <div class="col" style="color:white;">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
+                            <div class="col" style="color:white;">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
+                        </div>
+                        <div style="color:white;">{{ form_row(form_res.niveau) }}</div>
+                        <div style="color:white;">{{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}</div>
+                        <div style="color:white;">{{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}</div>
+                        <div class="row">
+                            <div class="col" style="color:white;">{{ form_row(form_res.type_chambre) }}</div>
+                            <div class="col" style="color:white;">{{ form_row(form_res.type_activite) }}</div>
+                        </div>                        <div class="row">
+                            <div class="col" style="color:white;">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
+                            <div class="col" style="color:white;">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
+                        </div>
+                        <div style="color:white;">{{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}</div>
+                        <div style="color:white;">{{ 'user.message'|trans }}{{ form_row(form_res.message) }}</div>
+                        <button type="submit" class="btn" style="background-color:grey;">{{ 'user.envoye'|trans }}</button>
+                        {{ form_end(form_res) }}
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    {% endif %}
+
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <br><br><br>&nbsp;<a class="btn btn-outline-secondary btn-sm" href="{{ path('kite_camp_index') }}">Retour à la liste</a>
+        &nbsp;&nbsp;<a class="btn btn-outline-warning btn-sm" href="{{ path('kite_camp_edit', {'id': kite_camp.id}) }}">Editer</a>
+        &nbsp;<a class="btn btn-danger btn-sm">{{ include('kite_camp/_delete_form.html.twig') }}
+        </a>
+    {% endif %}
+    </main>
+{% endblock %}

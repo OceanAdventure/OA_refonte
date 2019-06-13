@@ -1,0 +1,55 @@
+{% extends 'structure/base.html.twig' %}
+
+{% block title %}KiteCamp index{% endblock %}
+
+{% block body %}
+<main role="main" class="container">
+    <div class="card mt-5">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-xs-12">
+                    <h2 class="class-title">Liste des Kite Camps</h2>
+                </div>
+                <div class="col-md-4">
+                    <a href="{{ path('admin') }}" class="btn btn-outline-primary btn-sm">Retour</a>
+                    <a href="{{ path('kite_camp_new') }}" class="btn btn-outline-primary btn-sm">Ajouter un nouveau Kite Camps</a>
+                </div>
+            </div>
+            <hr>
+            <div class="container">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">intitule</th>
+                                <th scope="col">image</th>
+                                <th scope="col">actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for kite_camp in kite_camps %}
+                                <tr>
+                                    <td>{{ kite_camp.id }}</td>
+                                    <td>{{ kite_camp.intitule | raw }}</td>
+                                    <td>{{ kite_camp.image }}</td>
+                                    <td>
+                                        <a class="btn btn-secondary btn-sm" href="{{ path('kite_camp_show', {'id': kite_camp.id}) }}">
+                                            <span class="btn-inner--icon"><i class="fas fa-eye"></i></span> 
+                                        </a>
+                                        <a class="btn btn-warning btn-sm" href="{{ path('kite_camp_edit', {'id': kite_camp.id}) }}">
+                                            <span class="btn-inner--icon"><i class="fas fa-edit"></i></span>
+                                        </a>
+                                        <a class="btn btn-danger btn-sm">{{ include('kite_camp/_delete_form.html.twig') }}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

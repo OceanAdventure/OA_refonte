@@ -3,11 +3,12 @@
 {% block title %}{{ surf_camp.destination }}{% endblock %}
 
 {% block bandeau %}
-<div class="container-fluid" style="padding-left: 0px;">	
-            <div class="col-md-12" style="background-image: url(images/imgConcept.png); background-position:top; padding-left: 0px;">
-                <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="100%" style="margin: 0px; padding: 0px; position: relative;"/>
-                <br><center>{{ surf_camp.destination }}</center>
-            </div>
+<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
+    <div class="row">
+        <div class="col-md-12" style="background-image: url(images/imgConcept.png); background-position:top; padding-left: 0px;">
+            <img src="{{ asset('images/imgConcept.png') }}" alt="" width="100%" height="100%" style="margin: 0px; padding: 0px; position: relative;"/>
+        </div>
+    </div>
 </div>
 {% endblock %}
 
@@ -26,145 +27,136 @@
                 </p>
                 <img alt="" src="{{ asset('upload/'~surf_camp.image1~'') }}" width="100%" height="15%" style="margin: 0px; padding: 0px;" />
                 <br><br>
-                <div class-"row">
-                    <div class="col-md-12">
-                    {{ surf_camp.galerie | raw }}
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6" style="position: relative; overflow:hidden;">
-                        <img alt="" src="{{ asset('upload/'~surf_camp.image2~'') }}" width="85%" height="50%" style="margin: 30px; padding: 0px;" />
-                        <h3 style="position: relative; overflow:hidden;">
-                            {{ surf_camp.sstitre2 | raw }}
-                        </h3>
-                        <p>
-                            {{ surf_camp.sstext2 | raw }}
-                        </p>
-                    </div>
-                    <div class="col-6" style="position: relative; overflow:hidden;">
-                        <h3>
-                            <br><img src="{{ asset('images/home_surfing.png') }}" alt="" width="25%" height="25%" style="margin: 0px; padding: 0px;"/>
-                            <br><br>{{ surf_camp.sstitre3 | raw }}
-                        </h3>
-                        <p>
-                            {{ surf_camp.sstext3 | raw }}
-                        </p>
-                        <img alt="" src="{{ asset('upload/'~surf_camp.image3~'') }}" width="85%" height="50%" style="margin: 30px; padding: 0px;" />
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12" style="position: relative; overflow:hidden;">
-                                {{ surf_camp.galerie2 | raw }}
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>
-                            {{ surf_camp.prestation | raw }}
-                        </h3>
-                        <p>
-                            {{ surf_camp.enumeration | raw }}
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>
-                            {{ surf_camp.guidePratiqueDestination | raw }}
-                        </h3>
-                        <p>
-                            {{ surf_camp.texteInfo | raw }}
-                        </p>
-                        {{ surf_camp.googleMap | raw }}
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-3">
-                        <h3><b>Séjour individuel</b></h3>
-                        <img alt="" src="{{ asset('images/imgIndividuel.jpg') }}" width="100%" height="60%"/>
-                        <br><p>Tu es seul et veut rejoindre le surf camp pour progresser et rencontrer d'autres personnes venues d'autres pays.</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3><b>Séjour en couple</b></h3>
-                        <img alt="" src="{{ asset('images/imgCouple.jpg') }}" width="100%" height="60%"/>
-                        <br><p>Vous êtes en couple, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays tout en ayant votre intimité. </p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3><b>Séjour en groupe</b></h3>
-                        <img alt="" src="{{ asset('images/imgGroupe.jpg') }}" width="100%" height="60%"/>
-                        <br><p>Vous êtes un groupe d'amis, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays.</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3><b>Séjour en famille</b></h3>
-                        <img alt="" src="{{ asset('images/imgFamille.jpg') }}" width="100%" height="60%"/>
-                        <br><p>Vous venez en famille, avec des nourissons ou enfants en bas âge. Pas de soucis, vous bénéficierez d'un service adapté : nourrice, cours de surf pour les kids, etc...</p>
-                    </div>
-                </div>
-                <b><a href="{{ path('contact') }}">Demandez plus d'infos !</a></b><br><br>
-                {% if surf_camp.tarif %}
+            </div>
+        </div>
+        <div class-"row">
+            <div class="col-md-12">
+                {{ surf_camp.galerie | raw }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <img alt="" src="{{ asset('upload/'~surf_camp.image2~'') }}" width="85%" height="50%" style="margin: 30px; padding: 0px;" />
+                    <h3 style="position: relative; overflow:hidden;">{{ surf_camp.sstitre2 | raw }}</h3>
+                    <p>{{ surf_camp.sstext2 | raw }}</p>
+            </div>
+            <div class="col-md-6" style="position: relative; overflow:hidden;">
+                <br><img src="{{ asset('images/home_surfing.png') }}" alt="" width="25%" height="25%" style="margin: 0px; padding: 0px;"/>
+                <br><br><h3>{{ surf_camp.sstitre3 | raw }}</h3>
+                <p>{{ surf_camp.sstext3 | raw }}</p>
+                <img alt="" src="{{ asset('upload/'~surf_camp.image3~'') }}" width="85%" height="50%" style="margin: 30px; padding: 0px;" />
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12" style="position: relative; overflow:hidden;">
+                {{ surf_camp.galerie2 | raw }}
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-6">
                 <h3>
-                    {{ surf_camp.tarif }}
+                    {{ surf_camp.prestation | raw }}
                 </h3>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="tabbable" id="tabs-525158">
-                            <ul class="nav nav-tabs">
-                                <li class="nav-item">
-                                    <a class="nav-link active show" href="#tab1" data-toggle="tab">Hors saison</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#tab2" data-toggle="tab">Pleine saison</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane active" id="panel-563485">
-                                    <p>
-                                        {{ surf_camp.horsSaisonText | raw }}
-                                    </p>
-                            </div>
-                            <div class="tab-pane" id="tab2">
-                                <p>
-                                    {{ surf_camp.saisonText | raw }}
-                                </p>
-                            </div>
+                <p>
+                    {{ surf_camp.enumeration | raw }}
+                </p>
+            </div>
+            <div class="col-md-6">
+                <h3>
+                    {{ surf_camp.guidePratiqueDestination | raw }}
+                </h3>
+                <p>
+                    {{ surf_camp.texteInfo | raw }}
+                </p>
+                {{ surf_camp.googleMap | raw }}
+            </div>
+        </div>
+        <br>
+        <div class="row" style="position: relative; overflow:hidden;">
+            <div class="col-md-3">
+                <h3><b>Séjour individuel</b></h3>
+                <img alt="" src="{{ asset('images/imgIndividuel.jpg') }}" width="100%" height="60%"/>
+                <br><p>Tu es seul et veut rejoindre le surf camp pour progresser et rencontrer d'autres personnes venues d'autres pays.</p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en couple</b></h3>
+                <img alt="" src="{{ asset('images/imgCouple.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous êtes en couple, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays tout en ayant votre intimité. </p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en groupe</b></h3>
+                <img alt="" src="{{ asset('images/imgGroupe.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous êtes un groupe d'amis, vous souhaitez progresser en surf et rencontrer d'autres personnes venues d'autres pays.</p>
+            </div>
+            <div class="col-md-3">
+                <h3><b>Séjour en famille</b></h3>
+                <img alt="" src="{{ asset('images/imgFamille.jpg') }}" width="100%" height="60%"/>
+                <br><p>Vous venez en famille, avec des nourissons ou enfants en bas âge. Pas de soucis, vous bénéficierez d'un service adapté : nourrice, cours de surf pour les kids, etc...</p>
+            </div>
+        </div>
+            <b><a href="{{ path('contact') }}">Demandez plus d'infos !</a></b><br><br>
+            {% if surf_camp.tarif %} 
+            <h3>
+                {{ surf_camp.tarif }}
+            </h3>
+        <div class="row" style="position: relative; overflow:hidden;">
+            <div class="col-md-12">
+                <div class="tabbable" id="tabs-525158">
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active show" href="#tab1" data-toggle="tab">Hors saison</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#tab2" data-toggle="tab">Pleine saison</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-563485">
+                            <p>
+                                {{ surf_camp.horsSaisonText | raw }}
+                            </p>
                         </div>
+                        <div class="tab-pane" id="tab2">
+                            <p>
+                                {{ surf_camp.saisonText | raw }}
+                            </p>
                         </div>
                     </div>
-                </div>
-                {% endif %}
-                <br>
-                {# form #}
-                <div style="background-color:#10476e; padding-left: 2%; padding-right: 2%; padding-bottom: 2%; padding-top: 2%; border-radius: 10px;" >
-                    <div class="row">
-                        <h2 style="color:white;"><b>&nbsp;Vis ton rêve, passe tes vacances avec nous !<br>&nbsp;Tarifs et Pré-réservation</b></h2>
-                        <br><div class="col-md-12">
-                                {{ form_start(form_res) }}
-                                <div class="row">
-                                    <div class="col" style="color:white;">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
-                                    <div class="col" style="color:white;">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
-                                </div>
-                                <div style="color:white;">{{ form_row(form_res.niveau) }}</div>
-                                <div style="color:white;">{{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}</div>
-                                <div style="color:white;">{{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}</div>
-                                <div class="row">
-                                    <div class="col" style="color:white;">{{ form_row(form_res.type_chambre) }}</div>
-                                    <div class="col" style="color:white;">{{ form_row(form_res.type_activite) }}</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style="color:white;">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
-                                    <div class="col" style="color:white;">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
-                                </div>
-                                <div style="color:white;">{{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}</div>
-                                <div style="color:white;">{{ 'user.message'|trans }}{{ form_row(form_res.message) }}</div>
-                                <button type="submit" class="btn" style="background-color:grey;">{{ 'user.envoye'|trans }}</button>
-                                {{ form_end(form_res) }}
-                        </div>
-                    </div>
-                </div>
                 </div>
             </div>
+        </div>
+        {% endif %}
+        <br>
+        <div style="background-color:#10476e; padding-left: 2%; padding-right: 2%; padding-bottom: 2%; padding-top: 2%; border-radius: 10px;" >
+            <div class="row">
+                <h2 style="color:white;"><b>&nbsp;Vis ton rêve, passe tes vacances avec nous !<br>&nbsp;Tarifs et Pré-réservation</b></h2>
+                <br><div class="col-md-12">
+                        {{ form_start(form_res) }}
+                        <div class="row">
+                            <div class="col" style="color:white;">{{ 'user.prenom'|trans }}{{ form_row(form_res.prenom) }}</div>
+                            <div class="col" style="color:white;">{{ 'user.nom'|trans }}{{ form_row(form_res.nom) }}</div>
+                        </div>
+                            <div style="color:white;">{{ form_row(form_res.niveau) }}</div>
+                            <div style="color:white;">{{ 'user.mail'|trans }}{{ form_row(form_res.mail) }}</div>
+                            <div style="color:white;">{{ 'user.telephone'|trans }}{{ form_row(form_res.telephone) }}</div>
+                            <div class="row">
+                                <div class="col" style="color:white;">{{ form_row(form_res.type_chambre) }}</div>
+                                <div class="col" style="color:white;">{{ form_row(form_res.type_activite) }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col" style="color:white;">{{ 'user.date_arr'|trans }}{{ form_row(form_res.date_arr) }}</div>
+                                <div class="col" style="color:white;">{{ 'user.nuite'|trans }}{{ form_row(form_res.nuitee) }}</div>
+                            </div>
+                            <div style="color:white;">{{ 'user.nb_pers'|trans }}{{ form_row(form_res.nb_personne) }}</div>
+                            <div style="color:white;">{{ 'user.message'|trans }}{{ form_row(form_res.message) }}</div>
+                            <button type="submit" class="btn" style="background-color:grey;">{{ 'user.envoye'|trans }}</button>
+                            {{ form_end(form_res) }}
+                        </div>
+                    </div>
+            </div>
+        </div>
         </div>
     </div><br>
     {% if is_granted('ROLE_ADMIN') %}

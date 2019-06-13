@@ -1,0 +1,13 @@
+{% extends 'structure/base.html.twig' %}
+
+{% block title %}Nouveau KiteCamp{% endblock %}
+
+{% block body %}
+<main role="main" class="container"><br><br>
+    <h1>Créer nouveau KiteCamp</h1>
+
+    {{ include('kite_camp/_form.html.twig') }}
+
+    <a href="{{ path('kite_camp_index') }}">retour à la liste</a>
+</main>
+{% endblock %}

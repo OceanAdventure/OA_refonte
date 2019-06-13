@@ -81,3 +81,10 @@ groupe:
     defaults: {_locale: fr}
     requirements:
       _locale: en|fr
+
+kite_camp_show:
+    path: /{_locale}/kiteCamp/{id}
+    controller: App\Controller\KiteCampController::show
+    defaults: {_locale: fr}
+    requirements:
+      _locale: en|fr

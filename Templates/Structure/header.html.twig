@@ -26,8 +26,16 @@
                             {% endfor %}
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a style="color: #696969;" class="nav-link dark" href="#">Kite</a>  
+                     <li class="nav-item dropdown">
+                        <a style="color: #696969;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Kite
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            {% for kite_camp in kite_camps %}
+                            <a class="dropdown-item" href="{{ path('kite_camp_show', {'id': kite_camp.id}) }}">{{ kite_camp.intitule }}</a>
+                            {% endfor %}
+                            <a class="dropdown-item" href="https://oceanadventure.surf/fuerteventura-canaries/kitecamp/ecole-kitesurf/">Ecole de Kite Fuerteventura</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a style="color: #696969;" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cours</a>

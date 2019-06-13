@@ -93,7 +93,7 @@ class Hebergement
         return $this->grandTitreEn;
     }
 
-    public function setGrandTitreEn(string $grandTitreEn): self
+    public function setGrandTitreEn(?string $grandTitreEn): self
     {
         $this->grandTitreEn = $grandTitreEn;
 
@@ -129,7 +129,7 @@ class Hebergement
         return $this->descriptionSsTitreEn;
     }
 
-    public function setDescriptionSsTitreEn(string $descriptionSsTitreEn): self
+    public function setDescriptionSsTitreEn(?string $descriptionSsTitreEn): self
     {
         $this->descriptionSsTitreEn = $descriptionSsTitreEn;
 
@@ -165,7 +165,7 @@ class Hebergement
         return $this->ssTextEn;
     }
 
-    public function setSsTextEn(string $ssTextEn): self
+    public function setSsTextEn(?string $ssTextEn): self
     {
         $this->ssTextEn = $ssTextEn;
 
@@ -189,7 +189,7 @@ class Hebergement
         return $this->typeDeChambreEn;
     }
 
-    public function setTypeDeChambreEn(string $typeDeChambreEn): self
+    public function setTypeDeChambreEn(?string $typeDeChambreEn): self
     {
         $this->typeDeChambreEn = $typeDeChambreEn;
 

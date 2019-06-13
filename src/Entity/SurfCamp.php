@@ -210,7 +210,7 @@ class SurfCamp
         return $this->titre1En;
     }
 
-    public function setTitre1En(string $titre1En): self
+    public function setTitre1En(?string $titre1En): self
     {
         $this->titre1En = $titre1En;
 
@@ -234,7 +234,7 @@ class SurfCamp
         return $this->miniDescriptionEn;
     }
 
-    public function setMiniDescriptionEn(string $miniDescriptionEn): self
+    public function setMiniDescriptionEn(?string $miniDescriptionEn): self
     {
         $this->miniDescriptionEn = $miniDescriptionEn;
 
@@ -294,7 +294,7 @@ class SurfCamp
         return $this->sstitre2En;
     }
 
-    public function setSstitre2En(string $sstitre2En): self
+    public function setSstitre2En(?string $sstitre2En): self
     {
         $this->sstitre2En = $sstitre2En;
 
@@ -318,7 +318,7 @@ class SurfCamp
         return $this->sstext2En;
     }
 
-    public function setSstext2En(string $sstext2En): self
+    public function setSstext2En(?string $sstext2En): self
     {
         $this->sstext2En = $sstext2En;
 
@@ -354,7 +354,7 @@ class SurfCamp
         return $this->sstitre3En;
     }
 
-    public function setSstitre3En(string $sstitre3En): self
+    public function setSstitre3En(?string $sstitre3En): self
     {
         $this->sstitre3En = $sstitre3En;
 
@@ -378,7 +378,7 @@ class SurfCamp
         return $this->sstext3En;
     }
 
-    public function setSstext3En(string $sstext3En): self
+    public function setSstext3En(?string $sstext3En): self
     {
         $this->sstext3En = $sstext3En;
 
@@ -462,7 +462,7 @@ class SurfCamp
         return $this->guidePratiqueDestinationEn;
     }
 
-    public function setGuidePratiqueDestinationEn(string $guidePratiqueDestinationEn): self
+    public function setGuidePratiqueDestinationEn(?string $guidePratiqueDestinationEn): self
     {
         $this->guidePratiqueDestinationEn = $guidePratiqueDestinationEn;
 

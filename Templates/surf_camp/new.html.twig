@@ -1,13 +1,13 @@
 {% extends 'structure/base.html.twig' %}
 
-{% block title %}New SurfCamp{% endblock %}
+{% block title %}Nouveau SurfCamp{% endblock %}
 
 {% block body %}
 <main role="main" class="container"><br><br>
-    <h1>Create new SurfCamp</h1>
+    <h1>Créer nouveau SurfCamp</h1>
 
     {{ include('surf_camp/_form.html.twig') }}
 
-    <a href="{{ path('surf_camp_index') }}">back to list</a>
+    <a href="{{ path('surf_camp_index') }}">Retour à la liste</a>
 </main>
 {% endblock %}

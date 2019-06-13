@@ -70,7 +70,7 @@ class SurfCampFuert
         return $this->grandTitreEn;
     }
 
-    public function setGrandTitreEn(string $grandTitreEn): self
+    public function setGrandTitreEn(?string $grandTitreEn): self
     {
         $this->grandTitreEn = $grandTitreEn;
 
@@ -94,7 +94,7 @@ class SurfCampFuert
         return $this->titreAccrocheEn;
     }
 
-    public function setTitreAccrocheEn(string $titreAccrocheEn): self
+    public function setTitreAccrocheEn(?string $titreAccrocheEn): self
     {
         $this->titreAccrocheEn = $titreAccrocheEn;
 
@@ -118,7 +118,7 @@ class SurfCampFuert
         return $this->paragraphe1En;
     }
 
-    public function setParagraphe1En(string $paragraphe1En): self
+    public function setParagraphe1En(?string $paragraphe1En): self
     {
         $this->paragraphe1En = $paragraphe1En;
 
