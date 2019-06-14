@@ -1,4 +1,251 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <p>Intitulé :</p>
+    {{ form_widget(form.intitule) }}<br>
+    <p>Grand Titre (Fr) :</p>
+    {{ form_widget(form.GrandTitre) }}<br>
+    <input type="button" id="btn1" value="+ Ajouter Grand titre (En)" onclick="masquer_div('a_masquer1');" /><br>
+    <div id="a_masquer1" style="display: none;">
+        <p>Grand titre (En) :</p>
+        {{ form_widget(form.GrandTitreEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn11" value="+ Ajouter Grand titre (Es)" onclick="masquer_div('a_masquer11');" /><br>
+    <div id="a_masquer11" style="display: none;">
+        <p>Grand titre (Es) :</p>
+        {{ form_widget(form.GrandTitreEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn12" value="+ Ajouter Grand titre (It)" onclick="masquer_div('a_masquer12');" /><br>
+    <div id="a_masquer12" style="display: none;">
+        <p>Grand titre (It) :</p>
+        {{ form_widget(form.GrandTitreIt) }}<br>
+    </div>
+    <br>
+    <p>Description (Fr) :</p>
+    {{ form_widget(form.description) }}<br>
+    <input type="button" id="btn2" value="+ Ajouter Description (En)" onclick="masquer_div('a_masquer2');" /><br>
+    <div id="a_masquer2" style="display: none;">
+        <p>Description (En) :</p>
+        {{ form_widget(form.descriptionEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn21" value="+ Ajouter Description (Es)" onclick="masquer_div('a_masquer21');" /><br>
+    <div id="a_masquer21" style="display: none;">
+        <p>Description (Es) :</p>
+        {{ form_widget(form.descriptionEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn22" value="+ Ajouter Description (It)" onclick="masquer_div('a_masquer22');" /><br>
+    <div id="a_masquer22" style="display: none;">
+        <p>Description (It) :</p>
+        {{ form_widget(form.descriptionIt) }}<br>
+    </div>
+    <br>
+    <p>Image :</p>
+    {{ form_widget(form.image) }}<br>
+    <p>Galerie :</p>
+    {{ form_widget(form.galerie) }}<br>
+    <p>Image2 :</p>
+    {{ form_widget(form.image2) }}<br>
+    <p>Sous-titre2 (Fr) :</p>
+    {{ form_widget(form.ssTitre2) }}<br>
+    <input type="button" id="btn3" value="+ Ajouter Sous-titre2 (En)" onclick="masquer_div('a_masquer3');" /><br>
+    <div id="a_masquer3" style="display: none;">
+        <p>Sous-titre2 (En) :</p>
+        {{ form_widget(form.ssTitre2En) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn31" value="+ Ajouter Sous-titre2 (Es)" onclick="masquer_div('a_masquer31');" /><br>
+    <div id="a_masquer31" style="display: none;">
+        <p>Sous-titre2 (Es) :</p>
+        {{ form_widget(form.ssTitre2Es) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn32" value="+ Ajouter Sous-titre2 (It)" onclick="masquer_div('a_masquer32');" /><br>
+    <div id="a_masquer32" style="display: none;">
+        <p>Sous-titre2 (It) :</p>
+        {{ form_widget(form.ssTitre2It) }}<br>
+    </div>
+    <br>
+    <p>Sous text2 (Fr) :</p>
+    {{ form_widget(form.ssText2) }}<br>
+    <input type="button" id="btn4" value="+ Ajouter Sous Text2 (En)" onclick="masquer_div('a_masquer4');" /><br>
+    <div id="a_masquer4" style="display: none;">
+        <p>Sous Text2 (En) :</p>
+        {{ form_widget(form.ssText2En) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn41" value="+ Ajouter Sous Text2 (Es)" onclick="masquer_div('a_masquer41');" /><br>
+    <div id="a_masquer41" style="display: none;">
+        <p>Sous Text2 (Es) :</p>
+        {{ form_widget(form.ssText2Es) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn42" value="+ Ajouter Sous Text2 (It)" onclick="masquer_div('a_masquer42');" /><br>
+    <div id="a_masquer42" style="display: none;">
+        <p>Sous Text2 (It) :</p>
+        {{ form_widget(form.ssText2It) }}<br>
+    </div>
+    <br>
+    <p>Image3 :</p>
+    {{ form_widget(form.image3) }}<br>
+    <p>Sous titre et text 3 (Fr) :</p>
+    {{ form_widget(form.ssTitre3) }}<br>
+    <input type="button" id="btn5" value="+ Ajouter Sous Titre3 (En)" onclick="masquer_div('a_masquer5');" /><br>
+    <div id="a_masquer5" style="display: none;">
+        <p>Sous Titre3 (En) :</p>
+        {{ form_widget(form.ssTitre3En) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn51" value="+ Ajouter Sous Titre3 (Es)" onclick="masquer_div('a_masquer51');" /><br>
+    <div id="a_masquer51" style="display: none;">
+        <p>Sous Titre3 (Es) :</p>
+        {{ form_widget(form.ssTitre3Es) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn52" value="+ Ajouter Sous Titre3 (It)" onclick="masquer_div('a_masquer52');" /><br>
+    <div id="a_masquer52" style="display: none;">
+        <p>Sous Titre3 (It) :</p>
+        {{ form_widget(form.ssTitre3It) }}<br>
+    </div>
+    <br>
+    <p>Galerie 2  :</p>
+    {{ form_widget(form.galerie2) }}<br>
+    <br>
+    <p>text Info (Fr) :</p>
+    {{ form_widget(form.textInfo) }}<br>
+    <input type="button" id="btn6" value="+ Ajouter text Info (En)" onclick="masquer_div('a_masquer6');" /><br>
+    <div id="a_masquer6" style="display: none;">
+        <p>text Info (En) :</p>
+        {{ form_widget(form.textInfoEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn61" value="+ Ajouter text Info (Es)" onclick="masquer_div('a_masquer61');" /><br>
+    <div id="a_masquer61" style="display: none;">
+        <p>text Info (Es) :</p>
+        {{ form_widget(form.textInfoEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn62" value="+ Ajouter text Info (It)" onclick="masquer_div('a_masquer62');" /><br>
+    <div id="a_masquer62" style="display: none;">
+        <p>text Info (It) :</p>
+        {{ form_widget(form.textInfoIt) }}<br>
+    </div>
+    <br>
+    <p>Enumeration (Fr) :</p>
+    {{ form_widget(form.enumeration) }}<br>
+    <input type="button" id="btn7" value="+ Ajouter Enumeration (En)" onclick="masquer_div('a_masquer7');" /><br>
+    <div id="a_masquer7" style="display: none;">
+        <p>Enumeration (En) :</p>
+        {{ form_widget(form.enumerationEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn71" value="+ Ajouter Enumeration (Es)" onclick="masquer_div('a_masquer71');" /><br>
+    <div id="a_masquer71" style="display: none;">
+        <p>Enumeration (Es) :</p>
+        {{ form_widget(form.enumerationEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn72" value="+ Ajouter Enumeration (It)" onclick="masquer_div('a_masquer72');" /><br>
+    <div id="a_masquer72" style="display: none;">
+        <p>Enumeration (It) :</p>
+        {{ form_widget(form.enumerationIt) }}<br>
+    </div>
+    <br>
+    <p>Guide pratique / Destinations (Fr) :</p>
+    {{ form_widget(form.guidePratiqueDestination) }}<br>
+    <input type="button" id="btn8" value="+ Ajouter Guide pratique / Destination (En)" onclick="masquer_div('a_masquer8');" /><br>
+    <div id="a_masquer8" style="display: none;">
+        <p>Guide pratique / Destination (En) :</p>
+        {{ form_widget(form.guidePratiqueDestinationEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn81" value="+ Ajouter Guide pratique / Destination (Es)" onclick="masquer_div('a_masquer81');" /><br>
+    <div id="a_masquer81" style="display: none;">
+        <p>Guide pratique / Destination (Es) :</p>
+        {{ form_widget(form.guidePratiqueDestinationEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn82" value="+ Ajouter Guide pratique / Destination (It)" onclick="masquer_div('a_masquer82');" /><br>
+    <div id="a_masquer82" style="display: none;">
+        <p>Guide pratique / Destination (It) :</p>
+        {{ form_widget(form.guidePratiqueDestinationIt) }}<br>
+    </div>
+    <br>
+    <p>Text du Guide pratique / Destinations (Fr) :</p>
+    {{ form_widget(form.text) }}<br>
+    <input type="button" id="btn9" value="+ Ajouter Text du Guide pratique / Destination (En)" onclick="masquer_div('a_masquer9');" /><br>
+    <div id="a_masquer9" style="display: none;">
+        <p>Text du Guide pratique / Destination (En) :</p>
+        {{ form_widget(form.textEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn91" value="+ Ajouter Text du Guide pratique / Destination (Es)" onclick="masquer_div('a_masquer91');" /><br>
+    <div id="a_masquer91" style="display: none;">
+        <p>Text du Guide pratique / Destination (Es) :</p>
+        {{ form_widget(form.textEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn92" value="+ Ajouter Text du Guide pratique / Destination (It)" onclick="masquer_div('a_masquer92');" /><br>
+    <div id="a_masquer92" style="display: none;">
+        <p>Text du Guide pratique / Destination (It) :</p>
+        {{ form_widget(form.textIt) }}<br>
+    </div>
+    <br>
+    <p>Google Map  :</p>
+    {{ form_widget(form.googleMap) }}<br>
+    <p>Niveau (Fr) :</p>
+    {{ form_widget(form.niveauText) }}<br>
+    <input type="button" id="btn10" value="+ Ajouter Niveau (En)" onclick="masquer_div('a_masquer10');" /><br>
+    <div id="a_masquer10" style="display: none;">
+        <p>Niveau (En) :</p>
+        {{ form_widget(form.niveauTextEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn101" value="+ Ajouter Niveau (Es)" onclick="masquer_div('a_masquer101');" /><br>
+    <div id="a_masquer101" style="display: none;">
+        <p>Niveau (Es) :</p>
+        {{ form_widget(form.niveauTextEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn102" value="+ Ajouter Niveau (It)" onclick="masquer_div('a_masquer102');" /><br>
+    <div id="a_masquer102" style="display: none;">
+        <p>Niveau (It) :</p>
+        {{ form_widget(form.niveauTextIt) }}<br>
+    </div>
+    <br>
+    <p>Location (Fr) :</p>
+    {{ form_widget(form.locationText) }}<br>
+    <input type="button" id="btn11" value="+ Ajouter Location (En)" onclick="masquer_div('a_masquer11');" /><br>
+    <div id="a_masquer11" style="display: none;">
+        <p>Location (En) :</p>
+        {{ form_widget(form.locationTextEn) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn111" value="+ Ajouter Location (Es)" onclick="masquer_div('a_masquer111');" /><br>
+    <div id="a_masquer111" style="display: none;">
+        <p>Location (Es) :</p>
+        {{ form_widget(form.locationTextEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn112" value="+ Ajouter Location (It)" onclick="masquer_div('a_masquer112');" /><br>
+    <div id="a_masquer112" style="display: none;">
+        <p>Location (It) :</p>
+        {{ form_widget(form.locationTextIt) }}<br>
+    </div>
+    <br>
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+<script>
+function masquer_div(id)
+{
+  if (document.getElementById(id).style.display == 'block')
+  {
+       document.getElementById(id).style.display = 'none';
+  }
+  else 
+  {
+       document.getElementById(id).style.display = 'block';
+  }
+}
+</script>

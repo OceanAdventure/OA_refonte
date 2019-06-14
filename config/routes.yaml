@@ -3,88 +3,88 @@ accueil:
     controller: App\Controller\AccueilController::pageAccueil
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 fuert:
     path: /{_locale}/fuerteventura
     controller: App\Controller\AccueilController::fuerteventura
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 concept:
     path: /{_locale}/concept-contact
     controller: App\Controller\AccueilController::concept_contact
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 contact:
     path: /{_locale}/contact
     controller: App\Controller\AccueilController::contact
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 reserver:
     path: /{_locale}/reserver
     controller: App\Controller\AccueilController::reserver
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 produit_show:
     path: /{_locale}/produit/{id}
     controller: App\Controller\ProduitController::show
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 surf_camp_fuert_show:
     path: /{_locale}/surfCamp-fuert/{id}
     controller: App\Controller\SurfCampFuertController::show
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 surf_camp_show:
     path: /{_locale}/surfCamp/{id}
     controller: App\Controller\SurfCampController::show
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 hebergement_show:
     path: /{_locale}/hebergement/{id}
     controller: App\Controller\HebergementController::show
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 activite_show:
     path: /{_locale}/activite/{id}
     controller: App\Controller\ActiviteController::show
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 presentation_surfcamps:
     path: /{_locale}/surf-camps
     controller: App\Controller\AccueilController::presentationSurfcamps
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 groupe:
     path: /{_locale}/sejour-surf-groupes
     controller: App\Controller\AccueilController::groupe
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it
 
 kite_camp_show:
     path: /{_locale}/kiteCamp/{id}
     controller: App\Controller\KiteCampController::show
     defaults: {_locale: fr}
     requirements:
-      _locale: en|fr
+      _locale: en|fr|es|it

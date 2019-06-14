@@ -176,6 +176,126 @@ class SurfCamp
      */
     private $saisonTextEn;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $titre1Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $titre1It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $miniDescriptionEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $miniDescriptionIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstitre2Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstitre2It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstext2Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstext2It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstitre3Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstitre3It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstext3Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $sstext3It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $prestationEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $prestationIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $enumerationEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $enumerationIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $guidePratiqueDestinationEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $guidePratiqueDestinationIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $texteInfoEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $texteInfoIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $horsSaisonTextEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $horsSaisonTextIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $saisonTextEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $saisonTextIt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -561,6 +681,294 @@ class SurfCamp
     public function setSaisonTextEn(?string $saisonTextEn): self
     {
         $this->saisonTextEn = $saisonTextEn;
+
+        return $this;
+    }
+
+    public function getTitre1Es(): ?string
+    {
+        return $this->titre1Es;
+    }
+
+    public function setTitre1Es(?string $titre1Es): self
+    {
+        $this->titre1Es = $titre1Es;
+
+        return $this;
+    }
+
+    public function getTitre1It(): ?string
+    {
+        return $this->titre1It;
+    }
+
+    public function setTitre1It(?string $titre1It): self
+    {
+        $this->titre1It = $titre1It;
+
+        return $this;
+    }
+
+    public function getMiniDescriptionEs(): ?string
+    {
+        return $this->miniDescriptionEs;
+    }
+
+    public function setMiniDescriptionEs(?string $miniDescriptionEs): self
+    {
+        $this->miniDescriptionEs = $miniDescriptionEs;
+
+        return $this;
+    }
+
+    public function getMiniDescriptionIt(): ?string
+    {
+        return $this->miniDescriptionIt;
+    }
+
+    public function setMiniDescriptionIt(?string $miniDescriptionIt): self
+    {
+        $this->miniDescriptionIt = $miniDescriptionIt;
+
+        return $this;
+    }
+
+    public function getSstitre2Es(): ?string
+    {
+        return $this->sstitre2Es;
+    }
+
+    public function setSstitre2Es(?string $sstitre2Es): self
+    {
+        $this->sstitre2Es = $sstitre2Es;
+
+        return $this;
+    }
+
+    public function getSstitre2It(): ?string
+    {
+        return $this->sstitre2It;
+    }
+
+    public function setSstitre2It(?string $sstitre2It): self
+    {
+        $this->sstitre2It = $sstitre2It;
+
+        return $this;
+    }
+
+    public function getSstext2Es(): ?string
+    {
+        return $this->sstext2Es;
+    }
+
+    public function setSstext2Es(?string $sstext2Es): self
+    {
+        $this->sstext2Es = $sstext2Es;
+
+        return $this;
+    }
+
+    public function getSstext2It(): ?string
+    {
+        return $this->sstext2It;
+    }
+
+    public function setSstext2It(?string $sstext2It): self
+    {
+        $this->sstext2It = $sstext2It;
+
+        return $this;
+    }
+
+    public function getSstitre3Es(): ?string
+    {
+        return $this->sstitre3Es;
+    }
+
+    public function setSstitre3Es(?string $sstitre3Es): self
+    {
+        $this->sstitre3Es = $sstitre3Es;
+
+        return $this;
+    }
+
+    public function getSstitre3It(): ?string
+    {
+        return $this->sstitre3It;
+    }
+
+    public function setSstitre3It(?string $sstitre3It): self
+    {
+        $this->sstitre3It = $sstitre3It;
+
+        return $this;
+    }
+
+    public function getSstext3Es(): ?string
+    {
+        return $this->sstext3Es;
+    }
+
+    public function setSstext3Es(?string $sstext3Es): self
+    {
+        $this->sstext3Es = $sstext3Es;
+
+        return $this;
+    }
+
+    public function getSstext3It(): ?string
+    {
+        return $this->sstext3It;
+    }
+
+    public function setSstext3It(?string $sstext3It): self
+    {
+        $this->sstext3It = $sstext3It;
+
+        return $this;
+    }
+
+    public function getPrestationEs(): ?string
+    {
+        return $this->prestationEs;
+    }
+
+    public function setPrestationEs(?string $prestationEs): self
+    {
+        $this->prestationEs = $prestationEs;
+
+        return $this;
+    }
+
+    public function getPrestationIt(): ?string
+    {
+        return $this->prestationIt;
+    }
+
+    public function setPrestationIt(?string $prestationIt): self
+    {
+        $this->prestationIt = $prestationIt;
+
+        return $this;
+    }
+
+    public function getEnumerationEs(): ?string
+    {
+        return $this->enumerationEs;
+    }
+
+    public function setEnumerationEs(?string $enumerationEs): self
+    {
+        $this->enumerationEs = $enumerationEs;
+
+        return $this;
+    }
+
+    public function getEnumerationIt(): ?string
+    {
+        return $this->enumerationIt;
+    }
+
+    public function setEnumerationIt(?string $enumerationIt): self
+    {
+        $this->enumerationIt = $enumerationIt;
+
+        return $this;
+    }
+
+    public function getGuidePratiqueDestinationEs(): ?string
+    {
+        return $this->guidePratiqueDestinationEs;
+    }
+
+    public function setGuidePratiqueDestinationEs(?string $guidePratiqueDestinationEs): self
+    {
+        $this->guidePratiqueDestinationEs = $guidePratiqueDestinationEs;
+
+        return $this;
+    }
+
+    public function getGuidePratiqueDestinationIt(): ?string
+    {
+        return $this->guidePratiqueDestinationIt;
+    }
+
+    public function setGuidePratiqueDestinationIt(?string $guidePratiqueDestinationIt): self
+    {
+        $this->guidePratiqueDestinationIt = $guidePratiqueDestinationIt;
+
+        return $this;
+    }
+
+    public function getTexteInfoEs(): ?string
+    {
+        return $this->texteInfoEs;
+    }
+
+    public function setTexteInfoEs(?string $texteInfoEs): self
+    {
+        $this->texteInfoEs = $texteInfoEs;
+
+        return $this;
+    }
+
+    public function getTexteInfoIt(): ?string
+    {
+        return $this->texteInfoIt;
+    }
+
+    public function setTexteInfoIt(?string $texteInfoIt): self
+    {
+        $this->texteInfoIt = $texteInfoIt;
+
+        return $this;
+    }
+
+    public function getHorsSaisonTextEs(): ?string
+    {
+        return $this->horsSaisonTextEs;
+    }
+
+    public function setHorsSaisonTextEs(?string $horsSaisonTextEs): self
+    {
+        $this->horsSaisonTextEs = $horsSaisonTextEs;
+
+        return $this;
+    }
+
+    public function getHorsSaisonTextIt(): ?string
+    {
+        return $this->horsSaisonTextIt;
+    }
+
+    public function setHorsSaisonTextIt(?string $horsSaisonTextIt): self
+    {
+        $this->horsSaisonTextIt = $horsSaisonTextIt;
+
+        return $this;
+    }
+
+    public function getSaisonTextEs(): ?string
+    {
+        return $this->saisonTextEs;
+    }
+
+    public function setSaisonTextEs(?string $saisonTextEs): self
+    {
+        $this->saisonTextEs = $saisonTextEs;
+
+        return $this;
+    }
+
+    public function getSaisonTextIt(): ?string
+    {
+        return $this->saisonTextIt;
+    }
+
+    public function setSaisonTextIt(?string $saisonTextIt): self
+    {
+        $this->saisonTextIt = $saisonTextIt;
 
         return $this;
     }

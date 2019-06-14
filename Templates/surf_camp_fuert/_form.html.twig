@@ -7,6 +7,18 @@
         {{ form_widget(form.grandTitreEn) }}<br>
     </div>
     <br>
+     <input type="button" id="btn11" value="+ Ajouter Grand Titre (Es)" onclick="masquer_div('a_masquer11');" /><br>
+    <div id="a_masquer11" style="display: none;">
+        <p>Grand Titre (Es) :</p>
+        {{ form_widget(form.grandTitreEs) }}<br>
+    </div>
+    <br>
+     <input type="button" id="btn12" value="+ Ajouter Grand Titre (It)" onclick="masquer_div('a_masquer12');" /><br>
+    <div id="a_masquer12" style="display: none;">
+        <p>Grand Titre (It) :</p>
+        {{ form_widget(form.grandTitreIt) }}<br>
+    </div>
+    <br>
     <p>Titre accroche (Fr) :</p>
     {{ form_widget(form.titreAccroche) }}<br>
     <input type="button" id="btn2" value="+ Ajouter Titre accroche (En)" onclick="masquer_div('a_masquer2');" /><br>
@@ -15,12 +27,36 @@
     {{ form_widget(form.titreAccrocheEn) }}<br>
     </div>
     <br>
+    <input type="button" id="btn21" value="+ Ajouter Titre accroche (Es)" onclick="masquer_div('a_masquer21');" /><br>
+    <div id="a_masquer21" style="display: none;">
+    <p>Titre accroche (Es) :</p>
+    {{ form_widget(form.titreAccrocheEs) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn22" value="+ Ajouter Titre accroche (It)" onclick="masquer_div('a_masquer22');" /><br>
+    <div id="a_masquer22" style="display: none;">
+    <p>Titre accroche (It) :</p>
+    {{ form_widget(form.titreAccrocheIt) }}<br>
+    </div>
+    <br>
     <p>Paragraphe (Fr) :</p>
     {{ form_widget(form.paragraphe1) }}<br>
     <input type="button" id="btn3" value="+ Ajouter Paragraphe (En)" onclick="masquer_div('a_masquer3');" /><br>
     <div id="a_masquer3" style="display: none;">
     <p>Paragraphe (En) :</p>
     {{ form_widget(form.paragraphe1En) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn31" value="+ Ajouter Paragraphe (Es)" onclick="masquer_div('a_masquer31');" /><br>
+    <div id="a_masquer31" style="display: none;">
+    <p>Paragraphe (Es) :</p>
+    {{ form_widget(form.paragraphe1Es) }}<br>
+    </div>
+    <br>
+    <input type="button" id="btn32" value="+ Ajouter Paragraphe (It)" onclick="masquer_div('a_masquer32');" /><br>
+    <div id="a_masquer32" style="display: none;">
+    <p>Paragraphe (It) :</p>
+    {{ form_widget(form.paragraphe1It) }}<br>
     </div>
     <br>
     {{ form_widget(form) }}

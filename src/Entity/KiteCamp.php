@@ -161,6 +161,116 @@ class KiteCamp
      */
     private $locationTextEn;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $GrandTitreEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $GrandTitreIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssTitre2Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssTitre2It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssText2Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssText2It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssTitre3Es;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssTitre3It;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $textInfoEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $textInfoIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $enumerationEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $enumerationIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $guidePratiqueDestinationEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $guidePratiqueDestinationIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $textEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $textIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $niveauTextEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $niveauTextIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $locationTextEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $locationTextIt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -510,6 +620,270 @@ class KiteCamp
     public function setLocationTextEn(?string $locationTextEn): self
     {
         $this->locationTextEn = $locationTextEn;
+
+        return $this;
+    }
+
+    public function getGrandTitreEs(): ?string
+    {
+        return $this->GrandTitreEs;
+    }
+
+    public function setGrandTitreEs(?string $GrandTitreEs): self
+    {
+        $this->GrandTitreEs = $GrandTitreEs;
+
+        return $this;
+    }
+
+    public function getGrandTitreIt(): ?string
+    {
+        return $this->GrandTitreIt;
+    }
+
+    public function setGrandTitreIt(?string $GrandTitreIt): self
+    {
+        $this->GrandTitreIt = $GrandTitreIt;
+
+        return $this;
+    }
+
+    public function getDescriptionEs(): ?string
+    {
+        return $this->descriptionEs;
+    }
+
+    public function setDescriptionEs(?string $descriptionEs): self
+    {
+        $this->descriptionEs = $descriptionEs;
+
+        return $this;
+    }
+
+    public function getDescriptionIt(): ?string
+    {
+        return $this->descriptionIt;
+    }
+
+    public function setDescriptionIt(?string $descriptionIt): self
+    {
+        $this->descriptionIt = $descriptionIt;
+
+        return $this;
+    }
+
+    public function getSsTitre2Es(): ?string
+    {
+        return $this->ssTitre2Es;
+    }
+
+    public function setSsTitre2Es(?string $ssTitre2Es): self
+    {
+        $this->ssTitre2Es = $ssTitre2Es;
+
+        return $this;
+    }
+
+    public function getSsTitre2It(): ?string
+    {
+        return $this->ssTitre2It;
+    }
+
+    public function setSsTitre2It(?string $ssTitre2It): self
+    {
+        $this->ssTitre2It = $ssTitre2It;
+
+        return $this;
+    }
+
+    public function getSsText2Es(): ?string
+    {
+        return $this->ssText2Es;
+    }
+
+    public function setSsText2Es(?string $ssText2Es): self
+    {
+        $this->ssText2Es = $ssText2Es;
+
+        return $this;
+    }
+
+    public function getSsText2It(): ?string
+    {
+        return $this->ssText2It;
+    }
+
+    public function setSsText2It(?string $ssText2It): self
+    {
+        $this->ssText2It = $ssText2It;
+
+        return $this;
+    }
+
+    public function getSsTitre3Es(): ?string
+    {
+        return $this->ssTitre3Es;
+    }
+
+    public function setSsTitre3Es(?string $ssTitre3Es): self
+    {
+        $this->ssTitre3Es = $ssTitre3Es;
+
+        return $this;
+    }
+
+    public function getSsTitre3It(): ?string
+    {
+        return $this->ssTitre3It;
+    }
+
+    public function setSsTitre3It(?string $ssTitre3It): self
+    {
+        $this->ssTitre3It = $ssTitre3It;
+
+        return $this;
+    }
+
+    public function getTextInfoEs(): ?string
+    {
+        return $this->textInfoEs;
+    }
+
+    public function setTextInfoEs(?string $textInfoEs): self
+    {
+        $this->textInfoEs = $textInfoEs;
+
+        return $this;
+    }
+
+    public function getTextInfoIt(): ?string
+    {
+        return $this->textInfoIt;
+    }
+
+    public function setTextInfoIt(?string $textInfoIt): self
+    {
+        $this->textInfoIt = $textInfoIt;
+
+        return $this;
+    }
+
+    public function getEnumerationEs(): ?string
+    {
+        return $this->enumerationEs;
+    }
+
+    public function setEnumerationEs(?string $enumerationEs): self
+    {
+        $this->enumerationEs = $enumerationEs;
+
+        return $this;
+    }
+
+    public function getEnumerationIt(): ?string
+    {
+        return $this->enumerationIt;
+    }
+
+    public function setEnumerationIt(?string $enumerationIt): self
+    {
+        $this->enumerationIt = $enumerationIt;
+
+        return $this;
+    }
+
+    public function getGuidePratiqueDestinationEs(): ?string
+    {
+        return $this->guidePratiqueDestinationEs;
+    }
+
+    public function setGuidePratiqueDestinationEs(?string $guidePratiqueDestinationEs): self
+    {
+        $this->guidePratiqueDestinationEs = $guidePratiqueDestinationEs;
+
+        return $this;
+    }
+
+    public function getGuidePratiqueDestinationIt(): ?string
+    {
+        return $this->guidePratiqueDestinationIt;
+    }
+
+    public function setGuidePratiqueDestinationIt(?string $guidePratiqueDestinationIt): self
+    {
+        $this->guidePratiqueDestinationIt = $guidePratiqueDestinationIt;
+
+        return $this;
+    }
+
+    public function getTextEs(): ?string
+    {
+        return $this->textEs;
+    }
+
+    public function setTextEs(?string $textEs): self
+    {
+        $this->textEs = $textEs;
+
+        return $this;
+    }
+
+    public function getTextIt(): ?string
+    {
+        return $this->textIt;
+    }
+
+    public function setTextIt(?string $textIt): self
+    {
+        $this->textIt = $textIt;
+
+        return $this;
+    }
+
+    public function getNiveauTextEs(): ?string
+    {
+        return $this->niveauTextEs;
+    }
+
+    public function setNiveauTextEs(?string $niveauTextEs): self
+    {
+        $this->niveauTextEs = $niveauTextEs;
+
+        return $this;
+    }
+
+    public function getNiveauTextIt(): ?string
+    {
+        return $this->niveauTextIt;
+    }
+
+    public function setNiveauTextIt(?string $niveauTextIt): self
+    {
+        $this->niveauTextIt = $niveauTextIt;
+
+        return $this;
+    }
+
+    public function getLocationTextEs(): ?string
+    {
+        return $this->locationTextEs;
+    }
+
+    public function setLocationTextEs(?string $locationTextEs): self
+    {
+        $this->locationTextEs = $locationTextEs;
+
+        return $this;
+    }
+
+    public function getLocationTextIt(): ?string
+    {
+        return $this->locationTextIt;
+    }
+
+    public function setLocationTextIt(?string $locationTextIt): self
+    {
+        $this->locationTextIt = $locationTextIt;
 
         return $this;
     }

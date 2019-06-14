@@ -71,6 +71,46 @@ class Hebergement
      */
     private $galerie;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $grandTitreEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $grandTitreIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionSsTitreEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionSsTitreIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $typeDeChambreEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $typeDeChambreIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssTextEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $ssTextIt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -204,6 +244,102 @@ class Hebergement
     public function setGalerie(string $galerie): self
     {
         $this->galerie = $galerie;
+
+        return $this;
+    }
+
+    public function getGrandTitreEs(): ?string
+    {
+        return $this->grandTitreEs;
+    }
+
+    public function setGrandTitreEs(?string $grandTitreEs): self
+    {
+        $this->grandTitreEs = $grandTitreEs;
+
+        return $this;
+    }
+
+    public function getGrandTitreIt(): ?string
+    {
+        return $this->grandTitreIt;
+    }
+
+    public function setGrandTitreIt(?string $grandTitreIt): self
+    {
+        $this->grandTitreIt = $grandTitreIt;
+
+        return $this;
+    }
+
+    public function getDescriptionSsTitreEs(): ?string
+    {
+        return $this->descriptionSsTitreEs;
+    }
+
+    public function setDescriptionSsTitreEs(?string $descriptionSsTitreEs): self
+    {
+        $this->descriptionSsTitreEs = $descriptionSsTitreEs;
+
+        return $this;
+    }
+
+    public function getDescriptionSsTitreIt(): ?string
+    {
+        return $this->descriptionSsTitreIt;
+    }
+
+    public function setDescriptionSsTitreIt(?string $descriptionSsTitreIt): self
+    {
+        $this->descriptionSsTitreIt = $descriptionSsTitreIt;
+
+        return $this;
+    }
+
+    public function getTypeDeChambreEs(): ?string
+    {
+        return $this->typeDeChambreEs;
+    }
+
+    public function setTypeDeChambreEs(?string $typeDeChambreEs): self
+    {
+        $this->typeDeChambreEs = $typeDeChambreEs;
+
+        return $this;
+    }
+
+    public function getTypeDeChambreIt(): ?string
+    {
+        return $this->typeDeChambreIt;
+    }
+
+    public function setTypeDeChambreIt(?string $typeDeChambreIt): self
+    {
+        $this->typeDeChambreIt = $typeDeChambreIt;
+
+        return $this;
+    }
+
+    public function getSsTextEs(): ?string
+    {
+        return $this->ssTextEs;
+    }
+
+    public function setSsTextEs(?string $ssTextEs): self
+    {
+        $this->ssTextEs = $ssTextEs;
+
+        return $this;
+    }
+
+    public function getSsTextIt(): ?string
+    {
+        return $this->ssTextIt;
+    }
+
+    public function setSsTextIt(?string $ssTextIt): self
+    {
+        $this->ssTextIt = $ssTextIt;
 
         return $this;
     }

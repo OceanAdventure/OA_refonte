@@ -41,6 +41,26 @@ class Activite
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $titreEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionEs;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $titreIt;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $descriptionIt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +122,54 @@ class Activite
     public function setDescriptionEn(?string $descriptionEn): self
     {
         $this->descriptionEn = $descriptionEn;
+
+        return $this;
+    }
+
+    public function getTitreEs(): ?string
+    {
+        return $this->titreEs;
+    }
+
+    public function setTitreEs(?string $titreEs): self
+    {
+        $this->titreEs = $titreEs;
+
+        return $this;
+    }
+
+    public function getDescriptionEs(): ?string
+    {
+        return $this->descriptionEs;
+    }
+
+    public function setDescriptionEs(?string $descriptionEs): self
+    {
+        $this->descriptionEs = $descriptionEs;
+
+        return $this;
+    }
+
+    public function getTitreIt(): ?string
+    {
+        return $this->titreIt;
+    }
+
+    public function setTitreIt(?string $titreIt): self
+    {
+        $this->titreIt = $titreIt;
+
+        return $this;
+    }
+
+    public function getDescriptionIt(): ?string
+    {
+        return $this->descriptionIt;
+    }
+
+    public function setDescriptionIt(?string $descriptionIt): self
+    {
+        $this->descriptionIt = $descriptionIt;
 
         return $this;
     }

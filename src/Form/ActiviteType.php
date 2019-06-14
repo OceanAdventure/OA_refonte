@@ -16,8 +16,12 @@ class ActiviteType extends AbstractType
         $builder
             ->add('titre', CKEditorType::class)
             ->add('titreEn', CKEditorType::class)
+            ->add('titreEs', CKEditorType::class)
+            ->add('titreIt', CKEditorType::class)
             ->add('description', CKEditorType::class)
             ->add('descriptionEn', CKEditorType::class)
+            ->add('descriptionEs', CKEditorType::class)
+            ->add('descriptionIt', CKEditorType::class)
             ->add('image', FileType::class, ['data_class' => null])
         ;
     }

@@ -16,10 +16,10 @@
 				<br>
 			</div>
 		</div>
-		<div class="row">
+		{# <div class="row">
 			<div class="col-md-12" style="background-color: #dfe9e7; background-position:top; background-position:20% 20%; padding:10px; overflow:auto;" >
 				<center><h3><b>Quel destination pour votre Surf Camp ?</b></h3><br>
-    			{# <FORM>
+    			<FORM>
     				<datalist id="languages">
 						{% for surf_camp in surf_camps %}
 							<OPTION>{{ surf_camp.destination | raw }}
@@ -28,14 +28,14 @@
 							<OPTION>{{ surf_camp_fuert.grandTitre | raw }}
 						{% endfor %}
     				</datalist>
-    			</FORM> #}
+    			</FORM>
 				<form autocomplete="off">
 					<div class="autocomplete" style="width:300px;">
     					<input id="myInput" type="text" name="myCountry" placeholder="Country">
   					</div>
   					<input type="submit" value="Rechercher">
 				</form><br>
-				{# <div class="col-md-8">
+				<div class="col-md-8">
 					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-content">
@@ -56,8 +56,9 @@
 							</div>
 						</div>
 					</div>
-				</div></center> #}
-			</div>
+				</div></center>
+			</div> #}
+			<div class="row">
 			<div class="col-md-8" style="padding-left: 0px;">
 				<div class="container-fluid">
 					<img src="{{ asset('images/imgCouples.jpg') }}" class="img-fluid" alt="" style="top:0; max-width: 100%; height: auto; " width="100%"/>
@@ -73,6 +74,7 @@
 					<center><p style="color: #616161">Il n'existe pas de plus grand plaisir que de surfer et<br>chiller sur la plage en attendant de surfer encore !</p></center><br><br>
 					<center><a type="button" class="btn btn-info" href="https://oceanadventure.surf/surf-camps-2/">Voir nos surf camps</a></center><br>
 				</div>
+			</div>
 			</div>
 			<div>
 				<br>
